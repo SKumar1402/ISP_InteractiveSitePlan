@@ -19,11 +19,13 @@ public class Test_Scenario extends TestBase {
 		Initialization();
 	}
 	
-	 @Test(priority=6) public void Verify_SVG_Zoom_Slider() throws InterruptedException {
+	 @Test(priority=6) 
+	 public void Verify_AvailablePlansOnLot() throws InterruptedException {
 		 Thread.sleep(5000);
-		 Overview.SVG_ZoomSlider_Click(); 
-		 Assert.assertEquals(Overview.SVG_ZoomedSlider_Value(),Overview.SVG_Zoomed_in_Expected);
-		 System.out.println("Actual Slider value is : " + Overview.SVG_ZoomedSlider_Value());
-		 System.out.println("Expected Slider value is : " + Overview.SVG_Zoomed_in_Expected); 
+		 Overview.Select_TwoPlansAssigned_Lot();
+		 Assert.assertFalse(Overview.Hold_A_Lot_btn());
+		 System.out.println("Passed : Hold a Lot button invisiblity has been verified.");
 	}
+	
 }
+  

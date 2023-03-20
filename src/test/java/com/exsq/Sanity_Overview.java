@@ -109,9 +109,33 @@ public class Sanity_Overview extends TestBase {
 			System.out.println("Plan Listing (Right Panel) is not showing.");
 		}
 	}
-
 	
-	  @Test(priority=6) public void Verify_SVG_Zoom_Slider() {
+	 @Test(priority=6) 
+	 public void Verify_Plan_DetailCard_From_Listing() throws InterruptedException {
+		 Thread.sleep(5000);
+		 Overview.First_Plan_in_Listing();
+		 Assert.assertTrue(Overview.First_Listing_LightGallery_Image());
+		 System.out.println("Passed : Plan detail card gets displayed.");
+	}
+	 
+	 @Test(priority=7) 
+	 public void Verify_LightGallery_Image() throws InterruptedException {
+		 Overview.First_Listing_LightGallery_Image_Click();
+		 Thread.sleep(2000);
+		 Assert.assertTrue(Overview.Light_Gallery_Image());
+		 System.out.println("Passed : Light Gallery image and thumbnail image is showing.");
+	}
+	 
+	@Test(priority=8)
+	public void Verify_To_Close_LightGallery() throws InterruptedException {
+		Overview.Light_Gallery_CloseIcon();
+		Thread.sleep(2000);
+		Assert.assertFalse(Overview.Light_Gallery_Image());
+		System.out.println("Passed : Light Gallery has been closed.");
+	}	 
+	 
+	  @Test(priority=7) 
+	  public void Verify_SVG_Zoom_Slider() {
 		  Overview.SVG_ZoomSlider_Click();
 		  Assert.assertEquals(Overview.SVG_ZoomedSlider_Value(),Overview.SVG_Zoomed_in_Expected);
 		  System.out.println("Actual Slider value is : " + Overview.SVG_ZoomedSlider_Value());

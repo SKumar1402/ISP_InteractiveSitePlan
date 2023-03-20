@@ -1,5 +1,6 @@
 package com.exsq.isp_plugin.pageObjects;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public class ISP_Overview extends TestBase {
 	}
 	Actions action = new Actions(driver);
 	
+	String element="";
 	String First_Name=prop.getProperty("First_Name");
 	String Last_Name=prop.getProperty("Browser");
 	String Email=prop.getProperty("Email");
@@ -33,41 +35,29 @@ public class ISP_Overview extends TestBase {
 	public String PlanDetail_Slider_Minimum=prop.getProperty("Slider_Min");
 	public String Filter_Option_BackgroundColor=prop.getProperty("Filter_Option_BackgroundColor");
 	public String SVG_Zoomed_in_Expected=prop.getProperty("SVG_Zoomed_in");
+	public String SinglePlanAssigned=prop.getProperty("SinglePlanAssigned");
+	public String MultiPlanAssigned=prop.getProperty("MultiPlanAssigned");
+	public String OthersPlanInThisCommunity=prop.getProperty("OthersPlanInThisCommunity");
 		
 	//*****************Kenley community************
 	//Lot has lot Id
 	
 	@FindBy (css="path#Lot_168")
-	public WebElement SinglePlanAssigned;
+	public WebElement SinglePlanAssigned_2;
 	
 	//Lot has lot address
 	@FindBy (css="path#Lot_169")
-	public WebElement TwoPlansAssignedLot;
-
-	//Lot has lot address
-	@FindBy (css="path#Lot_170")
-	public WebElement Display_Name;
-		
-	//Lot has lot address
-	@FindBy (css="path#Lot_171")
-	public WebElement Spec_Address;
+	public WebElement TwoPlansAssignedLot_2;
 	
 	//*****************King's Grant community************
 	//Lot has lot Id
 	@FindBy (css="path#Lot_13")
-	public WebElement Lot_Id_3;
+	public WebElement SinglePlanAssigned_3;
 	
 	//Lot has lot address
 	@FindBy (css="path#Lot_14")
-	public WebElement Lot_Address_3;
+	public WebElement TwoPlansAssignedLot_3;
 
-	//Lot has lot address
-	@FindBy (css="path#Lot_15")
-	public WebElement Display_Name_3;
-		
-	//Lot has lot address
-	@FindBy (css="path#Lot_16")
-	public WebElement Spec_Address_3;
 	//*********************************************
 	
 	@FindBy (css="div#isp-skeleton")
@@ -87,6 +77,18 @@ public class ISP_Overview extends TestBase {
 	//1st Plan in the listing
 	@FindBy (css="section#ispallplanslist div.isp-plan-card:nth-child(1)")
 	private WebElement First_Plan_in_Listing;
+	
+	//Plan detail card > Light Gallery Image 
+	@FindBy (css="section#ispallplanslist div.isp-plan-card:nth-child(1) figure.galleryEffect")
+	private WebElement First_Listing_LightGallery_Image;
+	
+	//Light Gallery > 1st Image from the light gallery listing
+	@FindBy (css="div.lg-thumb-item.active")
+	private WebElement Light_Gallery_Image;
+	
+	//Light Gallery close icon
+	@FindBy (css="span.lg-close.lg-icon")
+	private WebElement Light_Gallery_CloseIcon;
 	
 	//Request Info Success pop up hide
 	@FindBy (css="section#isp-request-info-success:not(.isp-hide)")
@@ -323,7 +325,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement Cypress_Plan_RequestInfo_button;
 	
 	//Hold a Lot button from the lot details pop up
-	@FindBy (css="a#isp-hold-lot-btn")
+	@FindBy (css="a#isp-hold-lot-btn:not(.isp-hide)")
 	private WebElement Hold_A_Lot_btn;
 	
 	//Community name from the header
@@ -371,7 +373,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement SVG;
 	
 	//Available Plans on the selected Lot
-	@FindBy (css="availablePlansTabHead")
+	@FindBy (css="a#isp-tab1-header")
 	private WebElement Available_Plan_on_Lot;
 	
 	//Others Plan in This Community
@@ -381,6 +383,31 @@ public class ISP_Overview extends TestBase {
 	//Lot Detail pop up close icon 'X'
 	@FindBy (css="button#isp-closeModel")
 	private WebElement LotDetailPopUp_Close_icon;
+	
+	//Lot Detail Pop Up
+	@FindBy (css="div#isp-modaldialog")
+	private WebElement LotDetailPopUp;
+	
+	// Lot Size Value
+	@FindBy(css = "span#isp-size-val")
+	public WebElement LotSize_Value;
+
+	// Lot Block Value
+	@FindBy(css = "span#isp-block-val")
+	public WebElement LotBlock_Value;
+
+	// Lot Face Value
+	@FindBy(css = "span#isp-phase-val")
+	public WebElement LotPhase_Value;
+
+	// Lot Swing Value
+	@FindBy(css = "span#isp-swing-val")
+	public WebElement LotSwing_Value;
+
+	// Lot Elevation Value
+	@FindBy(css = "span#isp-elevation-val")
+	public WebElement LotElevation_Value;
+
 		
 	public boolean masterMap_btn()
 	{
@@ -579,54 +606,30 @@ public class ISP_Overview extends TestBase {
 	}
 	
 	
-	public void ClickOnLot_Lot_Id()
+	public void Select_SinglePlanAssigned_Lot()
 	{
 		String Type=prop.getProperty("ISP_Type");
 		if(Type.equals("Overview_2") || Type.equals("Preview_2"))
 		{
-			action.moveToElement(Lot_Id).click().perform();
+			action.moveToElement(SinglePlanAssigned_2).click().perform();
 		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
 		{
-			action.moveToElement(Lot_Id_3).click().perform();
+			action.moveToElement(SinglePlanAssigned_3).click().perform();
 		}
 	}
 	
-	public void ClickOnLot_Lot_Address()
+	public void Select_TwoPlansAssigned_Lot()
 	{
 		String Type=prop.getProperty("ISP_Type");
 		if(Type.equals("Overview_2") || Type.equals("Preview_2"))
 		{
-			action.moveToElement(Lot_Address).click().perform();
+			action.moveToElement(TwoPlansAssignedLot_2).click().perform();
 		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
 		{
-			action.moveToElement(Lot_Address_3).click().perform();
+			action.moveToElement(TwoPlansAssignedLot_3).click().perform();
 		}
 	}
-	
-	public void ClickOnLot_Lot_DisplayName()
-	{
-		String Type=prop.getProperty("ISP_Type");
-		if(Type.equals("Overview_2") || Type.equals("Preview_2"))
-		{
-			action.moveToElement(Display_Name).click().perform();
-		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
-		{
-			action.moveToElement(Display_Name_3).click().perform();
-		}
-	}
-	
-	public void ClickOnLot_Spec_Address()
-	{
-		String Type=prop.getProperty("ISP_Type");
-		if(Type.equals("Overview_2") || Type.equals("Preview_2"))
-		{
-			action.moveToElement(Spec_Address).click().perform();
-		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
-		{
-			action.moveToElement(Spec_Address_3).click().perform();
-		}
-	}
-	
+		
 	public void HoldALot_btn_click()
 	{
 		Hold_A_Lot_btn.click();
@@ -815,4 +818,96 @@ public class ISP_Overview extends TestBase {
 	public void LotDetailPopUp_Close_icon() {
 		LotDetailPopUp_Close_icon.click();
 	}
+	
+	public boolean LotDetailPopUp() {
+		boolean element=LotDetailPopUp.isDisplayed();
+		return element;
+	}
+	
+	public boolean First_Listing_LightGallery_Image() {
+		boolean element=First_Listing_LightGallery_Image.isDisplayed();
+		return element;
+	}
+	
+	public void First_Listing_LightGallery_Image_Click() {
+		First_Listing_LightGallery_Image.click();
+	}
+	
+	public boolean Light_Gallery_Image() {
+		try {
+			Light_Gallery_Image.isDisplayed();
+			return true;
+		}catch(Exception e)
+		{
+			return false;
+		}
+	}
+	
+	public void Light_Gallery_CloseIcon() {
+		Light_Gallery_CloseIcon.click();
+	}
+	
+	// Get the Lot Size value method
+	public String GetLotSize_Value() {
+		return element = LotSize_Value.getText();
+	}
+
+	// Get Lot Block value method
+	public String GetLotBlock_Value() {
+		return element = LotBlock_Value.getText();
+	}
+
+	// Get Lot Face value method
+	public String GetLotPhase_Value() {
+		return element = LotPhase_Value.getText();
+	}
+
+	// Get Lot Swing Value method
+	public String GetLotSwing_Value() {
+		return element = LotSwing_Value.getText();
+	}
+
+	// Get Lot Elevation Value method
+	public String GetLotElevation_Value() {
+		return element = LotElevation_Value.getText();
+	}	
+	
+	// Store lot details in HashMap from ISP
+	public HashMap<String, String> Actual_LotDetailsValues() {
+		HashMap<String, String> ISPLotDetails = new HashMap<String, String>();
+
+		ISPLotDetails.put("Size", GetLotSize_Value());
+		ISPLotDetails.put("Block", GetLotBlock_Value());
+		ISPLotDetails.put("Phase", GetLotPhase_Value());
+		ISPLotDetails.put("Swing", GetLotSwing_Value());
+		ISPLotDetails.put("Elevation", GetLotElevation_Value());
+		return ISPLotDetails;
+	}
+	
+	// Store lot details in HashMap from ISP
+	public HashMap<String, String> Expected_LotDetailsValues() {
+		HashMap<String, String> ISPLotDetails = new HashMap<String, String>();
+
+		ISPLotDetails.put("Size", prop.getProperty("Lot_Size"));
+		ISPLotDetails.put("Block", prop.getProperty("Lot_Block"));
+		ISPLotDetails.put("Phase", prop.getProperty("Lot_Phase"));
+		ISPLotDetails.put("Swing", prop.getProperty("Lot_Swing"));
+		ISPLotDetails.put("Elevation", prop.getProperty("Lot_Elevation"));
+		return ISPLotDetails;
+	}
+	
+	public String SinglePlanAssigned_2_GetCSS() {
+		return SinglePlanAssigned_2.getAttribute("style");
+	}
+	
+	public boolean Hold_A_Lot_btn() {
+		try {
+			Hold_A_Lot_btn.isDisplayed();
+			return true;
+		}catch(Exception e)
+		{
+			return false;
+		}
+	}
+	
 }

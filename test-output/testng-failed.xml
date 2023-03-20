@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Test_Scenario">
+      <class name="com.exsq.Lot_Selection_and_Listing">
         <methods>
-          <include name="Verify_SVG_Zoom_Slider"/>
+          <include name="Verify_Lot_Detail_Pop_Up"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.exsq.Test_Scenario -->
+      </class> <!-- com.exsq.Lot_Selection_and_Listing -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

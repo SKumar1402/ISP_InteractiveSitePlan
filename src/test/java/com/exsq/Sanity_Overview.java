@@ -134,7 +134,7 @@ public class Sanity_Overview extends TestBase {
 		System.out.println("Passed : Light Gallery has been closed.");
 	}	 
 	 
-	  @Test(priority=7) 
+	  @Test(priority=9) 
 	  public void Verify_SVG_Zoom_Slider() {
 		  Overview.SVG_ZoomSlider_Click();
 		  Assert.assertEquals(Overview.SVG_ZoomedSlider_Value(),Overview.SVG_Zoomed_in_Expected);

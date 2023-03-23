@@ -8,6 +8,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -41,14 +42,17 @@ public class TestBase {
             e2.printStackTrace();
         }
     }
-
+	
     public void LaunchBrowser()
     {
 		String browserName = prop.getProperty("Browser");
 		
 		if(browserName.equals("Chrome")){
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver(); 
+			WebDriverManager.chromedriver().setup(); 
+			ChromeOptions options=new ChromeOptions();    
+			options.addArguments("--remote-allow-origins=*");    
+			//Launching the browser
+			driver=new ChromeDriver(options);
 		}
 		else if(browserName.equals("FireFox")){
 			WebDriverManager.firefoxdriver().setup();

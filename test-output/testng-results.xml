@@ -1,49 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-17T16:51:48 IST" name="Default suite" finished-at="2023-03-17T16:52:54 IST" duration-ms="66079">
+  <suite started-at="2023-03-23T23:47:14 IST" name="Default suite" finished-at="2023-03-23T23:47:58 IST" duration-ms="43367">
     <groups>
     </groups>
-    <test started-at="2023-03-17T16:51:48 IST" name="Default test" finished-at="2023-03-17T16:52:54 IST" duration-ms="66079">
-      <class name="com.exsq.Lot_Selection_and_Listing">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:51:48 IST" name="setup" finished-at="2023-03-17T16:51:57 IST" duration-ms="8164" status="PASS">
+    <test started-at="2023-03-23T23:47:14 IST" name="Default test" finished-at="2023-03-23T23:47:58 IST" duration-ms="43367">
+      <class name="com.exsq.Test_Scenario">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Test_Scenario@65c7a252]" started-at="2023-03-23T23:47:14 IST" name="setup" finished-at="2023-03-23T23:47:20 IST" duration-ms="6176" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Verify_Lot_Detail_Pop_Up()[pri:1, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:51:57 IST" name="Verify_Lot_Detail_Pop_Up" finished-at="2023-03-17T16:52:02 IST" duration-ms="5321" status="PASS">
+        <test-method signature="Verify_MasterMap_Name_Header()[pri:1, instance:com.exsq.Test_Scenario@65c7a252]" started-at="2023-03-23T23:47:20 IST" name="Verify_MasterMap_Name_Header" finished-at="2023-03-23T23:47:28 IST" duration-ms="7081" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_Lot_Detail_Pop_Up -->
-        <test-method signature="Verify_SelectedLot_OutlineAndColor()[pri:2, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:02 IST" name="Verify_SelectedLot_OutlineAndColor" finished-at="2023-03-17T16:52:10 IST" duration-ms="8238" status="PASS">
+        </test-method> <!-- Verify_MasterMap_Name_Header -->
+        <test-method signature="Verify_MasterMap_Name_Footer()[pri:2, instance:com.exsq.Test_Scenario@65c7a252]" started-at="2023-03-23T23:47:28 IST" name="Verify_MasterMap_Name_Footer" finished-at="2023-03-23T23:47:28 IST" duration-ms="29" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_SelectedLot_OutlineAndColor -->
-        <test-method signature="Verify_HoldALot_Button_InsidePopup()[pri:3, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:10 IST" name="Verify_HoldALot_Button_InsidePopup" finished-at="2023-03-17T16:52:12 IST" duration-ms="2084" status="PASS">
+        </test-method> <!-- Verify_MasterMap_Name_Footer -->
+        <test-method signature="Verify_Plan_Listing()[pri:3, instance:com.exsq.Test_Scenario@65c7a252]" started-at="2023-03-23T23:47:28 IST" name="Verify_Plan_Listing" finished-at="2023-03-23T23:47:58 IST" duration-ms="30051" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_HoldALot_Button_InsidePopup -->
-        <test-method signature="Verify_LotDetails_from_Popup()[pri:4, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:12 IST" name="Verify_LotDetails_from_Popup" finished-at="2023-03-17T16:52:13 IST" duration-ms="417" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_LotDetails_from_Popup -->
-        <test-method signature="Verify_AvailablePlanOnLot()[pri:5, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:13 IST" name="Verify_AvailablePlanOnLot" finished-at="2023-03-17T16:52:15 IST" duration-ms="2079" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_AvailablePlanOnLot -->
-        <test-method signature="Verify_OtherPlansOnLot()[pri:6, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:15 IST" name="Verify_OtherPlansOnLot" finished-at="2023-03-17T16:52:17 IST" duration-ms="2056" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_OtherPlansOnLot -->
-        <test-method signature="Verify_AvailablePlansOnLot()[pri:7, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:17 IST" name="Verify_AvailablePlansOnLot" finished-at="2023-03-17T16:52:19 IST" duration-ms="2412" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_AvailablePlansOnLot -->
-        <test-method signature="Verify_HoldALot_Btn_Invisiblity()[pri:8, instance:com.exsq.Lot_Selection_and_Listing@4b45a2f5]" started-at="2023-03-17T16:52:19 IST" name="Verify_HoldALot_Btn_Invisiblity" finished-at="2023-03-17T16:52:54 IST" duration-ms="35245" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_HoldALot_Btn_Invisiblity -->
-      </class> <!-- com.exsq.Lot_Selection_and_Listing -->
+        </test-method> <!-- Verify_Plan_Listing -->
+      </class> <!-- com.exsq.Test_Scenario -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

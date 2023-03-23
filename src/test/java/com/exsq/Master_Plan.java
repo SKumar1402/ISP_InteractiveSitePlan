@@ -6,9 +6,7 @@ import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;
 
-public class Test_Scenario extends TestBase {
-	String ISP_Type=prop.getProperty("ISP_Type");
-
+public class Master_Plan extends TestBase{
 	@BeforeClass
 	public void setup() {
 		LaunchBrowser();
@@ -36,6 +34,4 @@ public class Test_Scenario extends TestBase {
 		Assert.assertFalse(Overview.Right_Panel_hide());
 		System.out.println("Passed: Right Plan invisiblity has been verified.");
 	 }
-	 
 }
-  

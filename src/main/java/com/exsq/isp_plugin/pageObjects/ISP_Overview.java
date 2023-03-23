@@ -21,6 +21,7 @@ public class ISP_Overview extends TestBase {
 	Actions action = new Actions(driver);
 	
 	String element="";
+	String Browser=prop.getProperty("Browser");
 	String First_Name=prop.getProperty("First_Name");
 	String Last_Name=prop.getProperty("Browser");
 	String Email=prop.getProperty("Email");
@@ -38,7 +39,10 @@ public class ISP_Overview extends TestBase {
 	public String SinglePlanAssigned=prop.getProperty("SinglePlanAssigned");
 	public String MultiPlanAssigned=prop.getProperty("MultiPlanAssigned");
 	public String OthersPlanInThisCommunity=prop.getProperty("OthersPlanInThisCommunity");
-		
+	public int AvailableLots_Count=Integer.parseInt(prop.getProperty("AvailableLots_Count"));
+	public String Expected_SelectedLot_outlined=prop.getProperty("SelectedLot_Outline");
+	public String Expected_SelectedLot_outlined_FireFox=prop.getProperty("SelectedLot_Outline_FireFox");
+	public String Expected_MasterMap_Name=prop.getProperty("MasterMap_Name");
 	//*****************Kenley community************
 	//Lot has lot Id
 	
@@ -107,8 +111,8 @@ public class ISP_Overview extends TestBase {
 	private WebElement Total_Spec_List;
 	
 	//List of community from Change Community list
-	@FindBy (css="li.isp-otherCommunity")
-	private WebElement Total_Other_Communities;
+	@FindBy (css="ul#isp-community-dropdown.isp-tooltip-open li")
+	private List<WebElement> Total_Other_Communities;
 		
 	//Master map button
 	@FindBy (css="a#isp-master-plan-btn")
@@ -309,10 +313,6 @@ public class ISP_Overview extends TestBase {
 	private WebElement Plan_details_Filter_btn;
 	
 	//Community from bottom
-	@FindBy (css="h3#isp-community-name")
-	private WebElement Community_Name_Bottom;
-	
-	//Community from bottom
 	@FindBy (css="h3#ispCommName")
 	private WebElement Community_Name_top;	
 	
@@ -408,6 +408,25 @@ public class ISP_Overview extends TestBase {
 	@FindBy(css = "span#isp-elevation-val")
 	public WebElement LotElevation_Value;
 
+	//Highlighted lots for Firefox
+	@FindBy (css="path[style='stroke-width: 5px; stroke: rgb(255, 0, 0);']")
+	private List<WebElement> All_Highlighted_Lots_Firefox;
+	
+	//Highlighted lots for Chrome
+	@FindBy (css="path[style='stroke-width: 5; stroke: rgb(255, 0, 0);']")
+	private List<WebElement> All_Highlighted_Lots;
+	
+	//Change Community > 1st Community from the list
+	@FindBy (css="ul#isp-community-dropdown li:nth-child(1)")
+	private WebElement ChangeCommunity_FirstCommunity;
+	
+	//Change Community Link
+	@FindBy (css="a#isp-change-community")
+	private WebElement Change_Community;
+	
+	//Change Community List
+	@FindBy (css="ul#isp-community-dropdown.isp-tooltip-open")
+	private WebElement Change_Community_List;
 		
 	public boolean masterMap_btn()
 	{
@@ -563,14 +582,20 @@ public class ISP_Overview extends TestBase {
 		
 	public boolean Community_Name_Header()
 	{
-		boolean elementStatus=Community_Name_Header.isDisplayed();
-		return elementStatus;
+		return Community_Name_Header.isDisplayed();
+	}
+	
+	public String Community_Name_Header_GetText() {
+		return Community_Name_Header.getText();
 	}
 	
 	public boolean Community_Name_Footer()
 	{
-		boolean elementStatus=Community_Name_Footer.isDisplayed();
-		return elementStatus;
+		return Community_Name_Footer.isDisplayed();
+	}
+	
+	public String Community_Name_Footer_GetText() {
+		return Community_Name_Footer.getText();
 	}
 	
 	public void HoldALot_First_Name_send() {
@@ -732,7 +757,7 @@ public class ISP_Overview extends TestBase {
 	}
 	
 	public boolean Right_Panel_hide()
-	{
+	{		
 		boolean element=false;
 		try {
 			element=Right_Panel.isDisplayed();
@@ -910,4 +935,44 @@ public class ISP_Overview extends TestBase {
 		}
 	}
 	
+	public int All_Highlighted_Lots() {
+		if(Browser.equals("FireFox")) {
+			return All_Highlighted_Lots_Firefox.size();
+		}else {
+			return All_Highlighted_Lots.size();
+		}
+	}
+	
+	public String Expected_SelectedLot_outlined() {
+		if(Browser.equals("FireFox")) {
+		return Expected_SelectedLot_outlined_FireFox;
+		}else {
+			return Expected_SelectedLot_outlined;
+			}
+	}
+	
+	public void Change_Community() {
+		Change_Community.click();
+	}
+	
+	public void ChangeCommunity_FirstCommunity() {
+		ChangeCommunity_FirstCommunity.click();
+	}
+	
+	public String ChangeCommunity_FirstCommunity_GetText() {
+		return ChangeCommunity_FirstCommunity.getText();
+	}
+	
+	public boolean Change_Community_List() {
+		return Change_Community_List.isDisplayed();
+	}
+	
+	public boolean Check_ChangeCommunity_List() {
+		String element=Community_Name_Footer_GetText();
+		for(WebElement check: Total_Other_Communities) 
+			if(check.getText().equals(element)) {
+			return true;
+			}	
+		return false;
+	}
 }

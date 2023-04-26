@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Lot_Detail_Popup">
+      <class name="com.exsq.Print">
         <methods>
-          <include name="Match_Lot_Data"/>
+          <include name="Close_Print_ModalWindow"/>
+          <include name="Print_Btn_Visiblity"/>
+          <include name="Print_ModalWindow_Visibility"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.exsq.Lot_Detail_Popup -->
+      </class> <!-- com.exsq.Print -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

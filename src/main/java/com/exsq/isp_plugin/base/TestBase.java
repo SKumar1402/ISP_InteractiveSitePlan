@@ -63,7 +63,7 @@ public class TestBase {
 		}
 			
 		driver.manage().window().maximize(); 
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
 
 	public void Initialization() {
@@ -78,16 +78,16 @@ public class TestBase {
     	String Type = prop.getProperty("ISP_Type");
     	if(Type.equals("Overview_2"))
     	{
-    		driver.get(prop.getProperty("Overview_2_0"));
+    		driver.navigate().to(prop.getProperty("Overview_2_0"));
     	}else if(Type.equals("Preview_2")) 
     	{
-    		driver.get(prop.getProperty("Preview_2_0"));
+    		driver.navigate().to(prop.getProperty("Preview_2_0"));
     	}else if(Type.equals("Overview_3")) 
     	{
-    		driver.get(prop.getProperty("Overview_3_0"));
+    		driver.navigate().to(prop.getProperty("Overview_3_0"));
     	}else if(Type.equals("Preview_3")) 
     	{
-    		driver.get(prop.getProperty("Preview_3_0"));
+    		driver.navigate().to(prop.getProperty("Preview_3_0"));
     	}
     }
 

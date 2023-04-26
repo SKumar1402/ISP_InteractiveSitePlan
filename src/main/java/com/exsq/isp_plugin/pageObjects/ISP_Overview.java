@@ -46,7 +46,7 @@ public class ISP_Overview extends TestBase {
 	//*****************Kenley community************
 	//Lot has lot Id
 	
-	@FindBy (css="path#Lot_168")
+	@FindBy (css="path#Lot_165")
 	public WebElement SinglePlanAssigned_2;
 	
 	//Lot has lot address
@@ -55,11 +55,11 @@ public class ISP_Overview extends TestBase {
 	
 	//*****************King's Grant community************
 	//Lot has lot Id
-	@FindBy (css="path#Lot_13")
+	@FindBy (css="path#Lot_165")
 	public WebElement SinglePlanAssigned_3;
 	
 	//Lot has lot address
-	@FindBy (css="path#Lot_14")
+	@FindBy (css="path#Lot_159")
 	public WebElement TwoPlansAssignedLot_3;
 
 	//*********************************************
@@ -79,7 +79,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement Total_Seleted_Lots;
 	
 	//1st Plan in the listing
-	@FindBy (css="section#ispallplanslist div.isp-plan-card:nth-child(1)")
+	@FindBy (css="section#ispallplanslist div.isp-plan-card:nth-child(1) div.isp-plan-image")
 	private WebElement First_Plan_in_Listing;
 	
 	//Plan detail card > Light Gallery Image 
@@ -120,10 +120,14 @@ public class ISP_Overview extends TestBase {
 	
 	//Print button
 	@FindBy (css="a#isp-print-btn")
-	private WebElement print_btn;
+	public WebElement print_btn;
+	
+	//Print > Generate PDF button
+	@FindBy (css="input#isp-print-option-submit")
+	private WebElement Generate_PDF;
 	
 	//Print modal window
-	@FindBy (css="section#isp-print-modal:not(.isp-hide)>div.isp-modal-inner")
+	@FindBy (css="section#isp-print-modal:not(.isp-hide)>div.isp-modal-inner iframe")
 	private WebElement print_modal_window;
 	
 	//Print modal window Header
@@ -136,11 +140,15 @@ public class ISP_Overview extends TestBase {
 	
 	//Print modal window Cancel button
 	@FindBy (css="section#isp-print-modal  div.isp-modal-footer button")
-	private WebElement print_modal_Cancel_btn;
+	public WebElement print_modal_Cancel_btn;
 	
 	//Request info button
 	@FindBy (css="a#isp-request-info-btn")
 	private WebElement request_info_btn_Footer;
+	
+	//Request info Form visibility
+	@FindBy (css="form#isp-request-info-form")
+	private WebElement Request_Info_Visible;
 	
 	//Request info First Name text field
 	@FindBy (css="input#isp-ri-fname")
@@ -247,13 +255,21 @@ public class ISP_Overview extends TestBase {
 	@FindBy (css="h3#isp-homesite-name")
 	private WebElement Detail_Popup_Homesite_Name;
 	
-	//Homesite Status button
+	//Homesite Status button for ISP 2.0
 	@FindBy (css="span#isp-homesite-filter-title")
-	private WebElement Homesite_Status_Filter_button;
+	private WebElement Homesite_Status_Filter_button_2;
 	
-	//Homesite Status filter dropdown/pop up
-	@FindBy (css="div#isp-status-dropdown")
-	private WebElement Homesite_StatusFilter_Dropdown;
+	//Homesite Status button for ISP 3.0
+		@FindBy (css="button#legends-btn")
+		private WebElement Homesite_Status_Filter_button_3;
+	
+	//Homesite Status filter dropdown/pop up for ISP 2.0 
+	@FindBy (css="div#isp-status-dropdown.show")
+	private WebElement Homesite_StatusFilter_Dropdown_2;
+	
+	//Homesite Status filter dropdown/pop up for ISP 3.0 
+	@FindBy (css="div#openLegends[style='display: block;']>div.Status_open")
+	private WebElement Homesite_StatusFilter_Dropdown_3;
 	
 	//Homesite Status Filter Apply button
 	
@@ -264,9 +280,13 @@ public class ISP_Overview extends TestBase {
 	@FindBy (css="div.isp-status-buttons a:nth-child(1)")
 	private WebElement Homesite_Status_Clear_btn;
 	
-	//Homesite Status Filter pop up Close button 
+	//Homesite Status Filter pop up Close button for ISP 2.0
 	@FindBy (css="a#isp-close-refine-button")
-	private WebElement Homesite_Status_Close_btn;
+	private WebElement Homesite_Status_Close_btn_ISP2;
+	
+	//Homesite Status Filter pop up Close button for ISP 3.0
+	@FindBy (css="a#close-refine-button")
+	private WebElement Homesite_Status_Close_btn_ISP3;
 	
 	//Loading... Loader 
 	@FindBy (css="div.media-loader-outer div#loader-caption")
@@ -325,7 +345,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement Cypress_Plan_RequestInfo_button;
 	
 	//Hold a Lot button from the lot details pop up
-	@FindBy (css="a#isp-hold-lot-btn:not(.isp-hide)")
+	@FindBy (css="div#isp-popup:not(.isp-hide) a#isp-hold-lot-btn")
 	private WebElement Hold_A_Lot_btn;
 	
 	//Community name from the header
@@ -361,7 +381,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement PlanDetails_Option_Section;
 	
 	//Plan Details > Bedroom Filter > Bedroom 3
-	@FindBy (css="div.isp-form-group:nth-child(3) div.isp-select-options label:nth-child(2)")
+	@FindBy (css="div.isp-form-group:nth-child(3) div.isp-select-options label:nth-child(8)")
 	private WebElement PlanDetails_BedroomThree;
 	
 	//SVG Zoom slider
@@ -441,8 +461,8 @@ public class ISP_Overview extends TestBase {
 	
 	public boolean print_btn()
 	{
-		boolean elementStatus=print_btn.isDisplayed();
-		return elementStatus;
+		return print_btn.isDisplayed();
+		//return elementStatus;
 	}
 	
 	public void print_btn_click()
@@ -452,9 +472,14 @@ public class ISP_Overview extends TestBase {
 	
 	public boolean request_info_btn()
 	{
-		boolean elementStatus=request_info_btn_Footer.isDisplayed();
-		return elementStatus;
+		return request_info_btn_Footer.isDisplayed();
 	}
+	
+	public boolean Request_Info_Visible() 
+	{
+		return Request_Info_Visible.isDisplayed();
+	}
+	
 	
 	public void request_info_btn_click()
 	{
@@ -548,21 +573,39 @@ public class ISP_Overview extends TestBase {
 		print_modal_Cancel_btn.click();
 	}
 	
-	public void Homesite_Status_Filter_button()
+	public void Homesite_Status_button_ISP2_Click()
 	{
-		Homesite_Status_Filter_button.click();
+		Homesite_Status_Filter_button_2.click();
 	}
 	
-	public boolean Homesite_StatusFilter_Dropdown()
+	public void Homesite_Status_button_ISP3_Click()
 	{
-		boolean elementStatus=Homesite_StatusFilter_Dropdown.isDisplayed();
-		return elementStatus;
+		Homesite_Status_Filter_button_3.click();
+	}
+	
+	public boolean Homesite_StatusFilter_Dropdown_ISP2()
+	{
+		try {
+			Homesite_StatusFilter_Dropdown_2.isDisplayed();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean Homesite_StatusFilter_Dropdown_ISP3() 
+	{
+		try {
+		Homesite_StatusFilter_Dropdown_3.isDisplayed();
+		return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 	public boolean Homesite_Status_Apply_btn_show()
 	{
-		boolean elementStatus=Homesite_StatusFilter_Dropdown.isDisplayed();
-		return elementStatus;
+		return Homesite_StatusFilter_Dropdown_2.isDisplayed();
 	}
 	
 	public void Homesite_Status_Apply_btn_click()
@@ -575,9 +618,14 @@ public class ISP_Overview extends TestBase {
 		Homesite_Status_Clear_btn.click();
 	}
 	
-	public void Homesite_Status_Close_btn_click()
+	public void Homesite_Status_Close_btn_ISP2_click()
 	{
-		Homesite_Status_Close_btn.click();
+		Homesite_Status_Close_btn_ISP2.click();
+	}
+	
+	public void Homesite_Status_Close_btn_ISP3_click()
+	{
+		Homesite_Status_Close_btn_ISP3.click();
 	}
 		
 	public boolean Community_Name_Header()
@@ -634,12 +682,12 @@ public class ISP_Overview extends TestBase {
 	public void Select_SinglePlanAssigned_Lot()
 	{
 		String Type=prop.getProperty("ISP_Type");
-		if(Type.equals("Overview_2") || Type.equals("Preview_2"))
+		if(Type.contains("2"))
 		{
 			action.moveToElement(SinglePlanAssigned_2).click().perform();
-		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
+		}else if(Type.contains("3")) 
 		{
-			action.moveToElement(SinglePlanAssigned_3).click().perform();
+			action.moveToElement(SinglePlanAssigned_3).click().build().perform();
 		}
 	}
 	
@@ -697,8 +745,7 @@ public class ISP_Overview extends TestBase {
 	
 	public boolean Loading_Loader()
 	{
-		boolean element=Loading_Loader.isDisplayed();
-		return element;
+		return Loading_Loader.isDisplayed();
 	}
 	
 	public boolean Loading_Loader_Transaction()
@@ -741,7 +788,7 @@ public class ISP_Overview extends TestBase {
 	
 	public void First_Plan_in_Listing()
 	{
-		First_Plan_in_Listing.click();
+		action.moveToElement(All_Available_Plan).click().build().perform();
 	}
 	
 	public boolean Request_Info_FirstListing()
@@ -844,9 +891,8 @@ public class ISP_Overview extends TestBase {
 		LotDetailPopUp_Close_icon.click();
 	}
 	
-	public boolean LotDetailPopUp() {
-		boolean element=LotDetailPopUp.isDisplayed();
-		return element;
+	public boolean LotDetailPopUp_Visibility() {
+		return LotDetailPopUp.isDisplayed();
 	}
 	
 	public boolean First_Listing_LightGallery_Image() {
@@ -974,5 +1020,10 @@ public class ISP_Overview extends TestBase {
 			return true;
 			}	
 		return false;
+	}
+	
+	public void Generate_PDF_Btn_Clicked()
+	{
+		Generate_PDF.click();
 	}
 }

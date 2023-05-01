@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -37,4 +38,9 @@ public class Change_Community extends TestBase {
 		 Assert.assertEquals(FirstCommunity_Text, Overview.Community_Name_Footer_GetText());
 		 System.out.println("Passed : Community name after change the community has been verified.");
 	}
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

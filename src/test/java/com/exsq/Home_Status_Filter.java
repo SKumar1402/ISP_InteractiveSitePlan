@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -58,4 +59,10 @@ public class Home_Status_Filter extends TestBase {
 				System.out.println("Passed : After click on Homesite Status Filter close button list for ISP 3.0 GeoSpatial has been closed");
 			}
 	}
+	
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

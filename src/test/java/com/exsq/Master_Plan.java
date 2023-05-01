@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -34,4 +35,9 @@ public class Master_Plan extends TestBase{
 		Assert.assertFalse(Overview.Right_Panel_hide());
 		System.out.println("Passed: Right Plan invisiblity has been verified.");
 	 }
+	 
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 } 
 }

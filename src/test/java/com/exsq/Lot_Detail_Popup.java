@@ -2,6 +2,7 @@ package com.exsq;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,6 +25,7 @@ public class Lot_Detail_Popup extends TestBase {
 		Overview.Select_SinglePlanAssigned_Lot();
 		Assert.assertTrue(Overview.LotDetailPopUp_Visibility());
 		System.out.println("Passed : Lot detail pop visiblity has been verified.");
+		
 	 }
 	 
 	 @Test(priority=2)
@@ -45,5 +47,11 @@ public class Lot_Detail_Popup extends TestBase {
 		 Assert.assertFalse(Overview.Hold_A_Lot_btn());
 		 System.out.println("Passed : Hold a Lot button invisiblity has been verified.");
 	 }
+	 
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }
   

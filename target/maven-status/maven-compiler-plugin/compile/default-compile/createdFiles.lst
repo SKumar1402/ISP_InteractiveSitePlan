@@ -1,0 +1,4 @@
+com\exsq\isp_plugin\base\TestBase.class
+com\exsq\isp_plugin\pageObjects\Admin_Homepage_page.class
+com\exsq\isp_plugin\pageObjects\ISP_Overview.class
+com\exsq\isp_plugin\pageObjects\ISP_Preview.class

@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -74,4 +75,9 @@ public class Request_Info extends TestBase {
 		}
 	}
 	
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -26,4 +27,10 @@ public class Community_Name_Visibility extends TestBase {
 		Assert.assertTrue(Overview.Community_Name_Footer());
 		System.out.println("Passed : Community Name has been verified in the Footer.");
 	}
+	
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

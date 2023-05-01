@@ -2,6 +2,7 @@ package com.exsq;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -65,4 +66,9 @@ public class Lot_Selection_and_Listing extends TestBase {
 		 System.out.println("Passed : Hold a Lot button invisiblity has been verified.");
 	}
 
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

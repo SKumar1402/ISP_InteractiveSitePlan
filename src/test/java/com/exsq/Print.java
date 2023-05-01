@@ -1,6 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -44,4 +45,10 @@ public class Print extends TestBase{
 		Assert.assertFalse(Overview.print_modal_window());
 		System.out.println("Passed : Print Modal window has been closed.");
 	}
+	
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

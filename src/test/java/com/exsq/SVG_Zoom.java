@@ -1,7 +1,7 @@
 package com.exsq;
 
 import org.testng.Assert;
-
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -30,4 +30,10 @@ public class SVG_Zoom extends TestBase {
 			  System.out.println("This is only for ISP 2.0 and not applicable in ISP 3.0.");
 		  }
 	}
+	
+	 @AfterClass
+	 public void CloseBrowser() {
+		 driver.close();
+	 }
+	 
 }

@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-01T16:31:13 IST" name="Default suite" finished-at="2023-05-01T16:31:32 IST" duration-ms="18537">
+  <suite started-at="2023-05-04T12:26:52 IST" name="Suite" finished-at="2023-05-04T12:27:27 IST" duration-ms="34753">
     <groups>
     </groups>
-    <test started-at="2023-05-01T16:31:13 IST" name="Default test" finished-at="2023-05-01T16:31:32 IST" duration-ms="18537">
-      <class name="com.exsq.Change_Community">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Change_Community@229c6181]" started-at="2023-05-01T16:31:13 IST" name="setup" finished-at="2023-05-01T16:31:22 IST" duration-ms="9222" status="PASS">
+    <test started-at="2023-05-04T12:26:52 IST" name="Test" finished-at="2023-05-04T12:27:27 IST" duration-ms="34753">
+      <class name="com.exsq.Print">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Print@3f6f6701]" started-at="2023-05-04T12:26:52 IST" name="setup" finished-at="2023-05-04T12:27:00 IST" duration-ms="7737" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Verify_ChangeCommunityList()[pri:1, instance:com.exsq.Change_Community@229c6181]" started-at="2023-05-01T16:31:22 IST" name="Verify_ChangeCommunityList" finished-at="2023-05-01T16:31:28 IST" duration-ms="5097" status="PASS">
+        <test-method signature="Print_Btn_Visiblity()[pri:0, instance:com.exsq.Print@3f6f6701]" started-at="2023-05-04T12:27:00 IST" name="Print_Btn_Visiblity" finished-at="2023-05-04T12:27:03 IST" duration-ms="2545" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_ChangeCommunityList -->
-        <test-method signature="Verify_ActiveCommunity_List()[pri:2, instance:com.exsq.Change_Community@229c6181]" started-at="2023-05-01T16:31:28 IST" name="Verify_ActiveCommunity_List" finished-at="2023-05-01T16:31:28 IST" duration-ms="78" status="PASS">
+        </test-method> <!-- Print_Btn_Visiblity -->
+        <test-method signature="Print_ModalWindow_Visibility()[pri:1, instance:com.exsq.Print@3f6f6701]" started-at="2023-05-04T12:27:03 IST" name="Print_ModalWindow_Visibility" finished-at="2023-05-04T12:27:06 IST" duration-ms="3075" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_ActiveCommunity_List -->
-        <test-method signature="Verify_SelectCommunityFromList()[pri:3, instance:com.exsq.Change_Community@229c6181]" started-at="2023-05-01T16:31:28 IST" name="Verify_SelectCommunityFromList" finished-at="2023-05-01T16:31:32 IST" duration-ms="3983" status="PASS">
+        </test-method> <!-- Print_ModalWindow_Visibility -->
+        <test-method signature="Close_Print_ModalWindow()[pri:3, instance:com.exsq.Print@3f6f6701]" started-at="2023-05-04T12:27:06 IST" name="Close_Print_ModalWindow" finished-at="2023-05-04T12:27:27 IST" duration-ms="21071" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_SelectCommunityFromList -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.exsq.Change_Community@229c6181]" started-at="2023-05-01T16:31:32 IST" name="CloseBrowser" finished-at="2023-05-01T16:31:32 IST" duration-ms="119" status="PASS">
+        </test-method> <!-- Close_Print_ModalWindow -->
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.exsq.Print@3f6f6701]" started-at="2023-05-04T12:27:27 IST" name="CloseBrowser" finished-at="2023-05-04T12:27:27 IST" duration-ms="290" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- com.exsq.Change_Community -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.exsq.Print -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

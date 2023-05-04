@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;
 
+
 public class Change_Community extends TestBase {
 	
 	@BeforeClass

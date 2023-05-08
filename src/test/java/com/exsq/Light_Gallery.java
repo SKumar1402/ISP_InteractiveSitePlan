@@ -59,7 +59,7 @@ public class Light_Gallery extends TestBase{
 	 
 	 @AfterClass
 	 public void CloseBrowser() {
-		 driver.close();
+		driver.close();
 	 }
 	 
 }

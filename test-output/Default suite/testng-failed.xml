@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Change_Community">
+      <class name="com.exsq.Light_Gallery">
         <methods>
-          <include name="Verify_SelectCommunityFromList"/>
           <include name="CloseBrowser"/>
+          <include name="Open_Light_Gallery"/>
           <include name="setup"/>
+          <include name="Close_LightGallery"/>
+          <include name="Select_PlanFrom_Listing"/>
         </methods>
-      </class> <!-- com.exsq.Change_Community -->
+      </class> <!-- com.exsq.Light_Gallery -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

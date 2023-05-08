@@ -788,7 +788,7 @@ public class ISP_Overview extends TestBase {
 	
 	public void First_Plan_in_Listing()
 	{
-		action.moveToElement(All_Available_Plan).click().build().perform();
+		action.moveToElement(First_Plan_in_Listing).click().build().perform();
 	}
 	
 	public boolean Request_Info_FirstListing()

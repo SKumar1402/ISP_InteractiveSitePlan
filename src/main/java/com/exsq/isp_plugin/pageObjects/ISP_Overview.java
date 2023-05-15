@@ -345,7 +345,7 @@ public class ISP_Overview extends TestBase {
 	private WebElement Cypress_Plan_RequestInfo_button;
 	
 	//Hold a Lot button from the lot details pop up
-	@FindBy (css="div#isp-popup:not(.isp-hide) a#isp-hold-lot-btn")
+	@FindBy (css="a#isp-hold-lot-btn:not(.isp-hide)")
 	private WebElement Hold_A_Lot_btn;
 	
 	//Community name from the header
@@ -854,6 +854,11 @@ public class ISP_Overview extends TestBase {
 	
 	public String PlanDetail_Slider_Min_value() {
 		String element=PlanDetail_Slider_Min.getAttribute("Style");
+		return element;
+	}
+	
+	public String PlanDetail_Slider_Min_value1() {
+		String element=PlanDetail_Slider_Min.getCssValue("left");
 		return element;
 	}
 	

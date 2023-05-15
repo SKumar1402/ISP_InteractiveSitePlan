@@ -38,10 +38,11 @@ public class Lot_Detail_Popup extends TestBase {
 	 public void Hold_A_Lot_Btn_Visiblity() {
 		 Assert.assertTrue(Overview.Hold_A_Lot_btn());
 		 System.out.println("Passed : Hold a Lot button visiblity has been verified.");
+		 Overview.LotDetailPopUp_Close_icon();
 	 }
 	 
 	 @Test(priority=8) 
-	 public void Verify_HoldALot_Btn_Invisiblity() throws InterruptedException {
+	 public void HoldALot_Btn_Invisiblity() throws InterruptedException {
 		 Thread.sleep(2000);
 		 Overview.Select_TwoPlansAssigned_Lot();
 		 Assert.assertFalse(Overview.Hold_A_Lot_btn());

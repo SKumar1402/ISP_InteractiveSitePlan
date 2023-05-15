@@ -3,15 +3,32 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.exsq.Print">
+      <class name="com.exsq.Plan_Details_Filter">
         <methods>
-          <include name="Close_Print_ModalWindow"/>
+          <include name="setup"/>
+          <include name="Select_PlanDetailsFilter_MinimumBtn_Slider"/>
           <include name="CloseBrowser"/>
-          <include name="Print_Btn_Visiblity"/>
-          <include name="Print_ModalWindow_Visibility"/>
+        </methods>
+      </class> <!-- com.exsq.Plan_Details_Filter -->
+      <class name="com.exsq.Lot_Selection_and_Listing">
+        <methods>
+          <include name="Verify_SelectedLot_OutlineAndColor"/>
+          <include name="Verify_HoldALot_Btn_Invisiblity"/>
+          <include name="Verify_LotOutlined_AfterSelectPlanFromListing"/>
+          <include name="Verify_OtherPlansOnLot"/>
+          <include name="Verify_AvailablePlanOnLot"/>
+          <include name="CloseBrowser"/>
+          <include name="Verify_AvailablePlansOnLot"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.exsq.Print -->
+      </class> <!-- com.exsq.Lot_Selection_and_Listing -->
+      <class name="com.exsq.Lot_Detail_Popup">
+        <methods>
+          <include name="Verify_HoldALot_Btn_Invisiblity"/>
+          <include name="setup"/>
+          <include name="CloseBrowser"/>
+        </methods>
+      </class> <!-- com.exsq.Lot_Detail_Popup -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

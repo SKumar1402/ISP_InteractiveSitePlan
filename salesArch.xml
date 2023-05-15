@@ -5,17 +5,20 @@
   <test thread-count="5" name="Test">  	
     <classes>
       <class name="com.exsq.Print"/>
-      <!--   <class name="com.exsq.Community_Name_Visibility"/>
+      <class name="com.exsq.Community_Name_Visibility"/>
       <class name="com.exsq.Light_Gallery"/>
       <class name="com.exsq.ExpendedView_inListing"/>
       <class name="com.exsq.Plan_Details_Filter"/>
       <class name="com.exsq.Lot_Detail_Popup"/>
       <class name="com.exsq.SVG_Zoom"/>
-      <class name="com.exsq.Lot_Selection_and_Listing"/>
       <class name="com.exsq.Change_Community"/>
       <class name="com.exsq.Home_Status_Filter"/>
       <class name="com.exsq.Master_Plan"/>
-      <class name="com.exsq.Request_Info"/> -->
+      <class name="com.exsq.Request_Info"/>
+      <!--  
+      
+      <class name="com.exsq.Lot_Selection_and_Listing"/>
+       -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

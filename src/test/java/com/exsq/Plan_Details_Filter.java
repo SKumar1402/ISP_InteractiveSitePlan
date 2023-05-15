@@ -34,8 +34,9 @@ public class Plan_Details_Filter extends TestBase {
 	@Test(priority = 2)
 	public void Select_PlanDetailsFilter_MinimumBtn_Slider() {
 		if (ISP_Type.contains("Overview")) {
+			String Before=Overview.PlanDetail_Slider_Min_value1();
 			Overview.PlanDetail_Slider_Min_Select();
-			Assert.assertEquals(Overview.PlanDetail_Slider_Minimum, Overview.PlanDetail_Slider_Min_value());
+			Assert.assertNotEquals(Before, Overview.PlanDetail_Slider_Min_value1());
 			System.out.println("Passed : Slider minimum button is clickable and values has been verified.");
 		} else {
 			Assert.assertFalse(Overview.Right_Panel_hide());

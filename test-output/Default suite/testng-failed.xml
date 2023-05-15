@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Plan_Details_Filter">
+      <class name="com.exsq.SVG_Zoom">
         <methods>
           <include name="setup"/>
-          <include name="Select_PlanDetailsFilter_MinimumBtn_Slider"/>
+          <include name="SVG_Zoom_Slider"/>
           <include name="CloseBrowser"/>
         </methods>
-      </class> <!-- com.exsq.Plan_Details_Filter -->
+      </class> <!-- com.exsq.SVG_Zoom -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

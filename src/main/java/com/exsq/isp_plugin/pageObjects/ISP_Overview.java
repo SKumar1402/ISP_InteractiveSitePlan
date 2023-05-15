@@ -874,7 +874,7 @@ public class ISP_Overview extends TestBase {
 	public void SVG_ZoomSlider_Click() {
 		//action.dragAndDropBy(SVG_ZoomSlider, 30, 0).build().perform();
 		action.clickAndHold(SVG_ZoomSlider);
-		action.moveByOffset(1, 0).release().build().perform();
+		action.moveByOffset(2, 0).release().build().perform();
 	}
 	
 	public String SVG_ZoomedSlider_Value() {

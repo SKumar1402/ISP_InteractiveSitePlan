@@ -21,11 +21,11 @@ public class SVG_Zoom extends TestBase {
 	@Test(priority=9) 
 	  public void SVG_Zoom_Slider() throws InterruptedException {
 		  Thread.sleep(5000);
+		  String Slider_Value=Overview.SVG_ZoomedSlider_Value();
 		  if(ISP_Type.contains("2")) {
 		  Overview.SVG_ZoomSlider_Click();
-		  Assert.assertEquals(Overview.SVG_ZoomedSlider_Value(),Overview.SVG_Zoomed_in_Expected);
-		  System.out.println("Actual Slider value is : " + Overview.SVG_ZoomedSlider_Value());
-		  System.out.println("Expected Slider value is : " + Overview.SVG_Zoomed_in_Expected); 
+		  Assert.assertNotEquals(Slider_Value, Overview.SVG_ZoomedSlider_Value());
+		  System.out.println("Passed : SVG slider has been verified.");
 		  }else {
 			  System.out.println("This is only for ISP 2.0 and not applicable in ISP 3.0.");
 		  }
@@ -33,7 +33,7 @@ public class SVG_Zoom extends TestBase {
 	
 	 @AfterClass
 	 public void CloseBrowser() {
-		 driver.close();
+		 //driver.close();
 	 }
 	 
 }

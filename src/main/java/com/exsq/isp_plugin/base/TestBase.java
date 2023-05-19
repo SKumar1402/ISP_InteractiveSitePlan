@@ -81,6 +81,8 @@ public class TestBase {
 		
 		extentReports.setSystemInfo("OS", System.getProperty("os.name"));
 		extentReports.setSystemInfo("Java Version", System.getProperty("java.version"));
+		
+		System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'self';");
 	}
 	
 	@AfterSuite

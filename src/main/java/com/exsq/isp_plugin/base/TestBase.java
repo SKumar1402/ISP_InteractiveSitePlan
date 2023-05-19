@@ -29,7 +29,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.exsq.isp_plugin.pageObjects.ISP_Overview;
 
-import bsh.Capabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {

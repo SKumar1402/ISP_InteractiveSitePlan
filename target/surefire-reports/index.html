@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -105,6 +105,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="com.exsq.Print" class="method navigator-link" hash-for-method="Close_Print_ModalWindow">Close_Print_ModalWindow</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.exsq.Community_Name_Visibility" class="method navigator-link" hash-for-method="Community_Name_Visibility_Header">Community_Name_Visibility_Header</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.exsq.Community_Name_Visibility" class="method navigator-link" hash-for-method="Community_Name_Visiblity_Footer">Community_Name_Visiblity_Footer</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -129,6 +139,28 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.exsq.Community_Name_Visibility</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Community_Name_Visibility_Header">
+                  </a> <!-- Community_Name_Visibility_Header -->
+                  <span class="method-name">Community_Name_Visibility_Header</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Community_Name_Visiblity_Footer">
+                  </a> <!-- Community_Name_Visiblity_Footer -->
+                  <span class="method-name">Community_Name_Visiblity_Footer</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -168,11 +200,12 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Print Functionality&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.exsq.Print&quot;/&gt;
+      &lt;class name=&quot;com.exsq.Community_Name_Visibility&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Print Functionality --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,7 +217,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Print Functionality (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -210,24 +243,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'Close_Print_ModalWindow')
 data.setCell(0, 2, 'com.exsq.Print')
-data.setCell(0, 3, 21114);
+data.setCell(0, 3, 21185);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Print_Btn_Visiblity')
 data.setCell(1, 2, 'com.exsq.Print')
-data.setCell(1, 3, 6021);
+data.setCell(1, 3, 5531);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Print_ModalWindow_Visibility')
-data.setCell(2, 2, 'com.exsq.Print')
-data.setCell(2, 3, 2038);
+data.setCell(2, 1, 'Community_Name_Visibility_Header')
+data.setCell(2, 2, 'com.exsq.Community_Name_Visibility')
+data.setCell(2, 3, 5311);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Print_ModalWindow_Visibility')
+data.setCell(3, 2, 'com.exsq.Print')
+data.setCell(3, 3, 2159);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'Community_Name_Visiblity_Footer')
+data.setCell(4, 2, 'com.exsq.Community_Name_Visibility')
+data.setCell(4, 3, 53);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -242,9 +283,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.exsq.Community_Name_Visibility</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">initialiseExtentReports</span>
+                <br/>
+                <span class="ignored-method-name">generateExtentReports</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -254,26 +304,98 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.exsq.Print</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">initialiseExtentReports</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">272 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">TestReport(public void com.exsq.Print.Print_Btn_Visiblity(), org.testng.TestRunner@2ec99035)</span>
+                <span class="method-start">10072 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Print_Btn_Visiblity</span>
-                <span class="method-start">10308 ms</span>
+                <span class="method-start">10082 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkStatus(public void com.exsq.Print.Print_Btn_Visiblity(), [TestResult name=Print_Btn_Visiblity status=SUCCES...)</span>
+                <span class="method-start">15617 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">TestReport(public void com.exsq.Print.Print_ModalWindow_Visibility(), org.testng.TestRunner@2ec99035)</span>
+                <span class="method-start">15632 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Print_ModalWindow_Visibility</span>
-                <span class="method-start">16335 ms</span>
+                <span class="method-start">15633 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkStatus(public void com.exsq.Print.Print_ModalWindow_Visibility(), [TestResult name=Print_ModalWindow_Visibi...)</span>
+                <span class="method-start">17792 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">TestReport(public void com.exsq.Print.Close_Print_ModalWindow() throws java.lang.InterruptedException, org.test...)</span>
+                <span class="method-start">17794 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Close_Print_ModalWindow</span>
-                <span class="method-start">18374 ms</span>
+                <span class="method-start">17795 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkStatus(public void com.exsq.Print.Close_Print_ModalWindow() throws java.lang.InterruptedException, [TestRes...)</span>
+                <span class="method-start">38980 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">CloseBrowser</span>
-                <span class="method-start">39489 ms</span>
+                <span class="method-start">38981 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.exsq.Community_Name_Visibility</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">39140 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">TestReport(public void com.exsq.Community_Name_Visibility.Community_Name_Visibility_Header(), org.testng.TestRu...)</span>
+                <span class="method-start">44752 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Community_Name_Visibility_Header</span>
+                <span class="method-start">44753 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkStatus(public void com.exsq.Community_Name_Visibility.Community_Name_Visibility_Header(), [TestResult name=...)</span>
+                <span class="method-start">50064 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">TestReport(public void com.exsq.Community_Name_Visibility.Community_Name_Visiblity_Footer(), org.testng.TestRun...)</span>
+                <span class="method-start">50066 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Community_Name_Visiblity_Footer</span>
+                <span class="method-start">50066 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">checkStatus(public void com.exsq.Community_Name_Visibility.Community_Name_Visiblity_Footer(), [TestResult name=C...)</span>
+                <span class="method-start">50119 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">CloseBrowser</span>
+                <span class="method-start">50121 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.exsq.Print</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">generateExtentReports</span>
+                <span class="method-start">50357 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

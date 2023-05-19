@@ -59,7 +59,7 @@ public class Request_Info extends TestBase {
 	@Test(priority = 6)
 	public void Success_PopUp_Close() throws Throwable {
 		Overview.Great_Lets_Continue_btn_click();
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		Assert.assertFalse(Overview.ri_Success_Popup_hide());
 		System.out.println("Passed : Request Info success pop up has been closed.");
 	}

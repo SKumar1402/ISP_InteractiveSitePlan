@@ -10,6 +10,10 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.exsq.isp_plugin.base.TestBase;
 
 public class ISP_Overview extends TestBase {
@@ -20,6 +24,9 @@ public class ISP_Overview extends TestBase {
 	}
 	Actions action = new Actions(driver);
 	
+	//public ExtentReports extent=new ExtentReports();
+	//public ExtentSparkReporter spark= new ExtentSparkReporter("ExtentReport.html");
+		
 	String element="";
 	String Browser=prop.getProperty("Browser");
 	String First_Name=prop.getProperty("First_Name");
@@ -43,6 +50,7 @@ public class ISP_Overview extends TestBase {
 	public String Expected_SelectedLot_outlined=prop.getProperty("SelectedLot_Outline");
 	public String Expected_SelectedLot_outlined_FireFox=prop.getProperty("SelectedLot_Outline_FireFox");
 	public String Expected_MasterMap_Name=prop.getProperty("MasterMap_Name");
+	public boolean element_status=false;
 	//*****************Kenley community************
 	//Lot has lot Id
 	
@@ -553,9 +561,10 @@ public class ISP_Overview extends TestBase {
 	
 	public boolean print_modal_window()
 	{
+		element_status=false;
 		try {
-			print_modal_window.isDisplayed();
-			return true;
+		element_status=print_modal_window.isDisplayed();
+			return element_status;
 		}catch(Exception e) {
 			return false;
 		}
@@ -745,7 +754,8 @@ public class ISP_Overview extends TestBase {
 	
 	public boolean Loading_Loader()
 	{
-		return Loading_Loader.isDisplayed();
+		 boolean element=Loading_Loader.isDisplayed();
+		 return element;
 	}
 	
 	public boolean Loading_Loader_Transaction()
@@ -1031,4 +1041,15 @@ public class ISP_Overview extends TestBase {
 	{
 		Generate_PDF.click();
 	}
+	
+	public void Log_Status(boolean flag) {
+		ExtentTest test = null;
+		if(flag)
+		{
+			test.log(Status.PASS, "Test case has been Passed.");
+		}else {
+			test.log(Status.FAIL, "Test case has been Failed.");
+		}
+	}
+	
 }

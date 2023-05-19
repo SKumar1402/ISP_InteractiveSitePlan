@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Print Functionality(failed)">
     <classes>
-      <class name="com.exsq.SVG_Zoom">
+      <class name="com.exsq.Print">
         <methods>
-          <include name="setup"/>
-          <include name="SVG_Zoom_Slider"/>
+          <include name="Close_Print_ModalWindow"/>
           <include name="CloseBrowser"/>
+          <include name="checkStatus"/>
+          <include name="generateExtentReports"/>
+          <include name="setup"/>
+          <include name="TestReport"/>
+          <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.SVG_Zoom -->
+      </class> <!-- com.exsq.Print -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Print Functionality(failed) -->
+</suite> <!-- Failed suite [Suite] -->

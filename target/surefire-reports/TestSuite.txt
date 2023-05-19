@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.638 s - in TestSuite
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 51.809 s <<< FAILURE! - in TestSuite
+generateExtentReports(com.exsq.Print)  Time elapsed: 0.977 s  <<< FAILURE!
+java.io.IOException: 
+Failed to open file:/D:/ISP_PlugIn_Automation/ISP_Plugin/ExtentSparkReport.html. Error message: The system cannot find the file specified.
+
+

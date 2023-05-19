@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.SVG_Zoom">
+      <class name="com.exsq.Practice">
         <methods>
-          <include name="setup"/>
-          <include name="SVG_Zoom_Slider"/>
           <include name="CloseBrowser"/>
+          <include name="Print_ModalWindow_Visibility"/>
+          <include name="beforeTest"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.exsq.SVG_Zoom -->
+      </class> <!-- com.exsq.Practice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

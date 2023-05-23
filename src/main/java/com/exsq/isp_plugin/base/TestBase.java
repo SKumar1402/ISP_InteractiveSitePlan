@@ -9,6 +9,12 @@ import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.EmailAttachment;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.MultiPartEmail;
+import org.apache.commons.mail.SimpleEmail;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -86,9 +92,33 @@ public class TestBase {
 	}
 	
 	@AfterSuite
-	public void generateExtentReports() throws IOException {
+	public void generateExtentReports() throws IOException, Exception {
 		extentReports.flush();
 		//Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI());
+		
+		 // Attach the extent Report and send email using code
+/*	  EmailAttachment attachment = new EmailAttachment();
+	  	attachment.setPath("ExtentSparkReport.html");
+	  	attachment.setDisposition(EmailAttachment.ATTACHMENT);
+	  	attachment.setDescription("Extent Report");
+	  	attachment.setName("Suite Test Report");
+	
+	  // Create the email message
+	  MultiPartEmail email = new MultiPartEmail();
+		//Email email = new SimpleEmail();
+		email.setHostName("smtp.gmail.com");
+		email.setSmtpPort(465);
+		email.setAuthenticator(new DefaultAuthenticator("sukumar@ex2india.com", "dsdidbgvgwnbueac"));
+		email.setSSLOnConnect(true);
+		email.setFrom("sukumar@ex2india.com");
+		email.setSubject("Test Suite Result");
+		email.setMsg("This is a test mail ... :-)");
+		email.addTo("sukumar@ex2india.com");
+		
+		 // add the attachment
+		email.attach(attachment);
+		
+		email.send();*/
 	}
 		
     public void LaunchBrowser()

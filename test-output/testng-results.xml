@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-19T14:42:09 IST" name="Suite" finished-at="2023-05-19T14:42:42 IST" duration-ms="32596">
+  <suite started-at="2023-05-22T17:18:28 IST" name="Suite" finished-at="2023-05-22T17:19:04 IST" duration-ms="36440">
     <groups>
     </groups>
-    <test started-at="2023-05-19T14:42:09 IST" name="Print Functionality" finished-at="2023-05-19T14:42:42 IST" duration-ms="32596">
+    <test started-at="2023-05-22T17:18:28 IST" name="Print Functionality" finished-at="2023-05-22T17:19:04 IST" duration-ms="36440">
       <class name="com.exsq.Print">
-        <test-method is-config="true" signature="initialiseExtentReports()[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:09 IST" name="initialiseExtentReports" finished-at="2023-05-19T14:42:09 IST" duration-ms="272" status="PASS">
+        <test-method is-config="true" signature="initialiseExtentReports()[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:28 IST" name="initialiseExtentReports" finished-at="2023-05-22T17:18:28 IST" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseExtentReports -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:09 IST" name="setup" finished-at="2023-05-19T14:42:16 IST" duration-ms="6691" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:28 IST" name="setup" finished-at="2023-05-22T17:18:36 IST" duration-ms="7958" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:16 IST" name="TestReport" finished-at="2023-05-19T14:42:16 IST" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:36 IST" name="TestReport" finished-at="2023-05-22T17:18:36 IST" duration-ms="4" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,18 +24,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@583fb274]]>
+                <![CDATA[org.testng.TestRunner@27960b1e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestReport -->
-        <test-method signature="Print_Btn_Visiblity()[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:16 IST" name="Print_Btn_Visiblity" finished-at="2023-05-19T14:42:18 IST" duration-ms="1726" status="PASS">
+        <test-method signature="Print_Btn_Visiblity()[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:36 IST" name="Print_Btn_Visiblity" finished-at="2023-05-22T17:18:41 IST" duration-ms="5277" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Print_Btn_Visiblity -->
-        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:18 IST" name="checkStatus" finished-at="2023-05-19T14:42:18 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:41 IST" name="checkStatus" finished-at="2023-05-22T17:18:41 IST" duration-ms="10" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,14 +44,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Print_Btn_Visiblity status=SUCCESS method=Print.Print_Btn_Visiblity()[pri:0, instance:com.exsq.Print@18df8434] output={null}]]]>
+                <![CDATA[[TestResult name=Print_Btn_Visiblity status=SUCCESS method=Print.Print_Btn_Visiblity()[pri:0, instance:com.exsq.Print@e350b40] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:18 IST" name="TestReport" finished-at="2023-05-19T14:42:18 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:41 IST" name="TestReport" finished-at="2023-05-22T17:18:41 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,18 +60,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@583fb274]]>
+                <![CDATA[org.testng.TestRunner@27960b1e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestReport -->
-        <test-method signature="Print_ModalWindow_Visibility()[pri:1, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:18 IST" name="Print_ModalWindow_Visibility" finished-at="2023-05-19T14:42:20 IST" duration-ms="2791" status="PASS">
+        <test-method signature="Print_ModalWindow_Visibility()[pri:1, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:41 IST" name="Print_ModalWindow_Visibility" finished-at="2023-05-22T17:18:43 IST" duration-ms="1870" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Print_ModalWindow_Visibility -->
-        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:20 IST" name="checkStatus" finished-at="2023-05-19T14:42:20 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:43 IST" name="checkStatus" finished-at="2023-05-22T17:18:43 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -80,14 +80,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Print_ModalWindow_Visibility status=SUCCESS method=Print.Print_ModalWindow_Visibility()[pri:1, instance:com.exsq.Print@18df8434] output={null}]]]>
+                <![CDATA[[TestResult name=Print_ModalWindow_Visibility status=SUCCESS method=Print.Print_ModalWindow_Visibility()[pri:1, instance:com.exsq.Print@e350b40] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:20 IST" name="TestReport" finished-at="2023-05-19T14:42:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:43 IST" name="TestReport" finished-at="2023-05-22T17:18:43 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -96,18 +96,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@583fb274]]>
+                <![CDATA[org.testng.TestRunner@27960b1e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestReport -->
-        <test-method signature="Close_Print_ModalWindow()[pri:3, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:20 IST" name="Close_Print_ModalWindow" finished-at="2023-05-19T14:42:42 IST" duration-ms="21125" status="PASS">
+        <test-method signature="Close_Print_ModalWindow()[pri:3, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:18:43 IST" name="Close_Print_ModalWindow" finished-at="2023-05-22T17:19:04 IST" duration-ms="21146" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close_Print_ModalWindow -->
-        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:42 IST" name="checkStatus" finished-at="2023-05-19T14:42:42 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:19:04 IST" name="checkStatus" finished-at="2023-05-22T17:19:04 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -116,18 +116,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Close_Print_ModalWindow status=SUCCESS method=Print.Close_Print_ModalWindow()[pri:3, instance:com.exsq.Print@18df8434] output={null}]]]>
+                <![CDATA[[TestResult name=Close_Print_ModalWindow status=SUCCESS method=Print.Close_Print_ModalWindow()[pri:3, instance:com.exsq.Print@e350b40] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:42 IST" name="CloseBrowser" finished-at="2023-05-19T14:42:42 IST" duration-ms="189" status="PASS">
+        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:19:04 IST" name="CloseBrowser" finished-at="2023-05-22T17:19:04 IST" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-        <test-method is-config="true" signature="generateExtentReports()[pri:0, instance:com.exsq.Print@18df8434]" started-at="2023-05-19T14:42:42 IST" name="generateExtentReports" finished-at="2023-05-19T14:42:42 IST" duration-ms="539" status="PASS">
+        <test-method is-config="true" signature="generateExtentReports()[pri:0, instance:com.exsq.Print@e350b40]" started-at="2023-05-22T17:19:04 IST" name="generateExtentReports" finished-at="2023-05-22T17:19:10 IST" duration-ms="5610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateExtentReports -->

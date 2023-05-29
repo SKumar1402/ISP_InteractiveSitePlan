@@ -7,12 +7,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
+import java.util.Set;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailAttachment;
 import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.MultiPartEmail;
 import org.apache.commons.mail.SimpleEmail;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +27,11 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ISuite;
+import org.testng.ISuiteResult;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -37,7 +46,7 @@ import com.exsq.isp_plugin.pageObjects.ISP_Overview;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestBase {
+public class TestBase implements ITestListener{
 
 	public static Properties prop;
 	public static WebDriver driver;
@@ -45,6 +54,10 @@ public class TestBase {
 	public Actions action;
 	public static ExtentReports extentReports;
 	public static ExtentTest extentTest;
+	
+	List<ITestNGMethod> passedtests = new ArrayList<ITestNGMethod>();
+	List<ITestNGMethod> failedtests = new ArrayList<ITestNGMethod>();
+	List<ITestNGMethod> skippedtests = new ArrayList<ITestNGMethod>();
 
 
 	public WebDriverWait wait;
@@ -77,6 +90,8 @@ public class TestBase {
 		} else if(result.getStatus()==ITestResult.SUCCESS){
 			extentTest.pass(m.getName()+" is passed.");
 		}
+		
+	
 	}
 	
 	@BeforeSuite
@@ -91,34 +106,13 @@ public class TestBase {
 		System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'self';");
 	}
 	
+	
+	
+	
 	@AfterSuite
 	public void generateExtentReports() throws IOException, Exception {
 		extentReports.flush();
 		//Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI());
-		
-		 // Attach the extent Report and send email using code
-/*	  EmailAttachment attachment = new EmailAttachment();
-	  	attachment.setPath("ExtentSparkReport.html");
-	  	attachment.setDisposition(EmailAttachment.ATTACHMENT);
-	  	attachment.setDescription("Extent Report");
-	  	attachment.setName("Suite Test Report");
-	
-	  // Create the email message
-	  MultiPartEmail email = new MultiPartEmail();
-		//Email email = new SimpleEmail();
-		email.setHostName("smtp.gmail.com");
-		email.setSmtpPort(465);
-		email.setAuthenticator(new DefaultAuthenticator("sukumar@ex2india.com", "dsdidbgvgwnbueac"));
-		email.setSSLOnConnect(true);
-		email.setFrom("sukumar@ex2india.com");
-		email.setSubject("Test Suite Result");
-		email.setMsg("This is a test mail ... :-)");
-		email.addTo("sukumar@ex2india.com");
-		
-		 // add the attachment
-		email.attach(attachment);
-		
-		email.send();*/
 	}
 		
     public void LaunchBrowser()

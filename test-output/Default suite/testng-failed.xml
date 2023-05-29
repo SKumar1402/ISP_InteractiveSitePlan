@@ -3,14 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Practice">
+      <class name="com.exsq.Master_Plan">
         <methods>
-          <include name="CloseBrowser"/>
-          <include name="Print_ModalWindow_Visibility"/>
-          <include name="beforeTest"/>
+          <include name="Verify_MasterMap_Name_Footer"/>
+          <include name="Verify_MasterMap_Name_Header"/>
+          <include name="checkStatus"/>
+          <include name="generateExtentReports"/>
           <include name="setup"/>
+          <include name="TestReport"/>
+          <include name="CloseBrowser"/>
+          <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.Practice -->
+      </class> <!-- com.exsq.Master_Plan -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

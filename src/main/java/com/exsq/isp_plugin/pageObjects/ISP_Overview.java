@@ -49,7 +49,8 @@ public class ISP_Overview extends TestBase {
 	public int AvailableLots_Count=Integer.parseInt(prop.getProperty("AvailableLots_Count"));
 	public String Expected_SelectedLot_outlined=prop.getProperty("SelectedLot_Outline");
 	public String Expected_SelectedLot_outlined_FireFox=prop.getProperty("SelectedLot_Outline_FireFox");
-	public String Expected_MasterMap_Name=prop.getProperty("MasterMap_Name");
+	public String Expected_MasterMap_Name_2=prop.getProperty("MasterMap_Name_2");
+	public String Expected_MasterMap_Name_3=prop.getProperty("MasterMap_Name_3");
 	public boolean element_status=false;
 	//*****************Kenley community************
 	//Lot has lot Id
@@ -67,7 +68,7 @@ public class ISP_Overview extends TestBase {
 	public WebElement SinglePlanAssigned_3;
 	
 	//Lot has lot address
-	@FindBy (css="path#Lot_159")
+	@FindBy (css="path#Lot_168")
 	public WebElement TwoPlansAssignedLot_3;
 
 	//*********************************************
@@ -708,7 +709,7 @@ public class ISP_Overview extends TestBase {
 			action.moveToElement(TwoPlansAssignedLot_2).click().perform();
 		}else if(Type.equals("Preview_3") || Type.equals("Overview_3")) 
 		{
-			action.moveToElement(TwoPlansAssignedLot_3).click().perform();
+			action.moveToElement(TwoPlansAssignedLot_3).click().build().perform();
 		}
 	}
 		

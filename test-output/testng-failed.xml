@@ -3,17 +3,31 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Print Functionality(failed)">
     <classes>
-      <class name="com.exsq.Print">
+      <class name="com.exsq.ExpendedView_inListing">
         <methods>
-          <include name="Close_Print_ModalWindow"/>
-          <include name="CloseBrowser"/>
+          <include name="ExpendView_Visiblity_inListing"/>
+          <include name="setup"/>
           <include name="checkStatus"/>
           <include name="generateExtentReports"/>
-          <include name="setup"/>
+          <include name="RequestInfo_Visiblity_inListing"/>
+          <include name="CloseBrowser"/>
           <include name="TestReport"/>
           <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.Print -->
+      </class> <!-- com.exsq.ExpendedView_inListing -->
+      <class name="com.exsq.Light_Gallery">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="generateExtentReports"/>
+          <include name="CloseBrowser"/>
+          <include name="Open_Light_Gallery"/>
+          <include name="setup"/>
+          <include name="Close_LightGallery"/>
+          <include name="TestReport"/>
+          <include name="Select_PlanFrom_Listing"/>
+          <include name="initialiseExtentReports"/>
+        </methods>
+      </class> <!-- com.exsq.Light_Gallery -->
     </classes>
   </test> <!-- Print Functionality(failed) -->
 </suite> <!-- Failed suite [Suite] -->

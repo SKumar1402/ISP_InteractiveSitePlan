@@ -21,7 +21,6 @@ public class Lot_Detail_Popup extends TestBase {
 	 @Test(priority=1) 
 	 public void Select_Lot_Popup_Visiblity() throws InterruptedException {
 		wait.until(ExpectedConditions.visibilityOf(Overview.print_btn));
-		System.out.println("Session started");
 		Overview.Select_SinglePlanAssigned_Lot();
 		Assert.assertTrue(Overview.LotDetailPopUp_Visibility());
 		System.out.println("Passed : Lot detail pop visiblity has been verified.");

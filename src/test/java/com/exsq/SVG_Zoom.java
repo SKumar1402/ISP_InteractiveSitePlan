@@ -21,8 +21,8 @@ public class SVG_Zoom extends TestBase {
 	@Test(priority=9) 
 	  public void SVG_Zoom_Slider() throws InterruptedException {
 		  Thread.sleep(5000);
-		  String Slider_Value=Overview.SVG_ZoomedSlider_Value();
 		  if(ISP_Type.contains("2")) {
+		  String Slider_Value=Overview.SVG_ZoomedSlider_Value();
 		  Overview.SVG_ZoomSlider_Click();
 		  Assert.assertNotEquals(Slider_Value, Overview.SVG_ZoomedSlider_Value());
 		  System.out.println("Passed : SVG slider has been verified.");
@@ -33,7 +33,7 @@ public class SVG_Zoom extends TestBase {
 	
 	 @AfterClass
 	 public void CloseBrowser() {
-		 //driver.close();
+		 driver.close();
 	 }
 	 
 }

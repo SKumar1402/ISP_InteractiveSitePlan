@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailAttachment;
@@ -23,9 +25,11 @@ import org.apache.commons.mail.SimpleEmail;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ISuite;
 import org.testng.ISuiteResult;
@@ -41,9 +45,11 @@ import org.testng.annotations.BeforeTest;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.exsq.isp_plugin.pageObjects.ISP_Overview;
 
+import org.openqa.selenium.Capabilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase implements ITestListener{
@@ -85,13 +91,12 @@ public class TestBase implements ITestListener{
 	
 	@AfterMethod
 	public void checkStatus(Method m, ITestResult result) {
+		
 		if(result.getStatus()==ITestResult.FAILURE) { 
 			extentTest.fail(result.getThrowable());
 		} else if(result.getStatus()==ITestResult.SUCCESS){
 			extentTest.pass(m.getName()+" is passed.");
 		}
-		
-	
 	}
 	
 	@BeforeSuite
@@ -102,7 +107,7 @@ public class TestBase implements ITestListener{
 		
 		extentReports.setSystemInfo("OS", System.getProperty("os.name"));
 		extentReports.setSystemInfo("Java Version", System.getProperty("java.version"));
-		
+		extentReports.setSystemInfo("Author", System.getProperty("user.name")); 
 		System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'self';");
 	}
 	
@@ -112,7 +117,7 @@ public class TestBase implements ITestListener{
 	@AfterSuite
 	public void generateExtentReports() throws IOException, Exception {
 		extentReports.flush();
-		//Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI());
+		//Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI());	
 	}
 		
     public void LaunchBrowser()
@@ -125,13 +130,22 @@ public class TestBase implements ITestListener{
 			options.addArguments("--remote-allow-origins=*");    
 			//Launching the browser
 			driver=new ChromeDriver(options);
+			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 		else if(browserName.equals("FireFox")){
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver(); 
+			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}else if(browserName.equals("Edge")){
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(); 
+			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 			
 		driver.manage().window().maximize(); 

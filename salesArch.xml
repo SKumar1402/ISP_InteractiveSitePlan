@@ -4,7 +4,7 @@
 
   <test thread-count="5" name="Print Functionality">  	
     <classes>
-      <class name="com.exsq.Print"/>
+      <class name="com.exsq.Print"/> 
       <class name="com.exsq.Community_Name_Visibility"/> 
 	  <class name="com.exsq.Light_Gallery"/>
   	  <class name="com.exsq.ExpendedView_inListing"/>
@@ -15,7 +15,7 @@
   	  <class name="com.exsq.Home_Status_Filter"/>
   	  <class name="com.exsq.Master_Plan"/>
 	  <class name="com.exsq.Request_Info"/>
-	 <!--  -->
+	  <!-- -->
   	</classes>
   </test>
 </suite> <!-- Suite -->

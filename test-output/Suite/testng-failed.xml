@@ -3,6 +3,18 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Print Functionality(failed)">
     <classes>
+      <class name="com.exsq.Community_Name_Visibility">
+        <methods>
+          <include name="Community_Name_Visibility_Header"/>
+          <include name="checkStatus"/>
+          <include name="CloseBrowser"/>
+          <include name="generateExtentReports"/>
+          <include name="Community_Name_Visiblity_Footer"/>
+          <include name="TestReport"/>
+          <include name="setup"/>
+          <include name="initialiseExtentReports"/>
+        </methods>
+      </class> <!-- com.exsq.Community_Name_Visibility -->
       <class name="com.exsq.Print">
         <methods>
           <include name="Close_Print_ModalWindow"/>

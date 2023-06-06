@@ -42,6 +42,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -119,7 +121,8 @@ public class TestBase implements ITestListener{
 		extentReports.flush();
 		//Desktop.getDesktop().browse(new File("ExtentSparkReport.html").toURI());	
 	}
-		
+	
+	@Parameters("browserName2")
     public void LaunchBrowser()
     {
 		String browserName = prop.getProperty("Browser");
@@ -130,22 +133,22 @@ public class TestBase implements ITestListener{
 			options.addArguments("--remote-allow-origins=*");    
 			//Launching the browser
 			driver=new ChromeDriver(options);
-			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
+			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 		else if(browserName.equals("FireFox")){
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver(); 
-			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
+			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}else if(browserName.equals("Edge")){
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(); 
-			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
+			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
+			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 			
 		driver.manage().window().maximize(); 

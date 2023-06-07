@@ -3,9 +3,19 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Print Functionality(failed)">
     <classes>
+      <class name="com.exsq.Print">
+        <methods>
+          <include name="Close_Print_ModalWindow"/>
+          <include name="CloseBrowser"/>
+          <include name="checkStatus"/>
+          <include name="generateExtentReports"/>
+          <include name="setup"/>
+          <include name="TestReport"/>
+          <include name="initialiseExtentReports"/>
+        </methods>
+      </class> <!-- com.exsq.Print -->
       <class name="com.exsq.Community_Name_Visibility">
         <methods>
-          <include name="Community_Name_Visibility_Header"/>
           <include name="checkStatus"/>
           <include name="CloseBrowser"/>
           <include name="generateExtentReports"/>
@@ -15,19 +25,6 @@
           <include name="initialiseExtentReports"/>
         </methods>
       </class> <!-- com.exsq.Community_Name_Visibility -->
-      <class name="com.exsq.Print">
-        <methods>
-          <include name="Close_Print_ModalWindow"/>
-          <include name="CloseBrowser"/>
-          <include name="Print_Btn_Visiblity"/>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="Print_ModalWindow_Visibility"/>
-          <include name="setup"/>
-          <include name="TestReport"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Print -->
     </classes>
   </test> <!-- Print Functionality(failed) -->
 </suite> <!-- Failed suite [Suite] -->

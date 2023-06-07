@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Print Functionality(failed)">
     <classes>
       <class name="com.exsq.Print">
         <methods>
           <include name="Close_Print_ModalWindow"/>
           <include name="CloseBrowser"/>
-          <include name="Print_Btn_Visiblity"/>
           <include name="checkStatus"/>
           <include name="generateExtentReports"/>
-          <include name="Print_ModalWindow_Visibility"/>
           <include name="setup"/>
           <include name="TestReport"/>
           <include name="initialiseExtentReports"/>
         </methods>
       </class> <!-- com.exsq.Print -->
+      <class name="com.exsq.Community_Name_Visibility">
+        <methods>
+          <include name="checkStatus"/>
+          <include name="CloseBrowser"/>
+          <include name="generateExtentReports"/>
+          <include name="Community_Name_Visiblity_Footer"/>
+          <include name="TestReport"/>
+          <include name="setup"/>
+          <include name="initialiseExtentReports"/>
+        </methods>
+      </class> <!-- com.exsq.Community_Name_Visibility -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Print Functionality(failed) -->
+</suite> <!-- Failed suite [Suite] -->

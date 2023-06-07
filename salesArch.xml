@@ -4,9 +4,10 @@
 
   <test thread-count="5" name="Print Functionality">  	
     <classes>
-      <class name="com.exsq.Print"/> 
+       
       <class name="com.exsq.Community_Name_Visibility"/> 
       <!-- 
+      <class name="com.exsq.Print"/>
 	  <class name="com.exsq.Light_Gallery"/>
   	  <class name="com.exsq.ExpendedView_inListing"/>
    	  <class name="com.exsq.Plan_Details_Filter"/>

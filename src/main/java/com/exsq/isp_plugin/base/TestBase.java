@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -24,12 +25,12 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.exsq.isp_plugin.pageObjects.ISP_Overview;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.util.Date;
@@ -48,16 +49,12 @@ public class TestBase implements ITestListener{
 	int passedCount = 0;
 	int skippedCount = 0;
 	int totalExecutedCount = 0;
-	//List<ITestNGMethod> passedtests = new ArrayList<ITestNGMethod>();
-	//List<ITestNGMethod> failedtests = new ArrayList<ITestNGMethod>();
-	//List<ITestNGMethod> skippedtests = new ArrayList<ITestNGMethod>();
 
 
 	public WebDriverWait wait;
 	
 	public TestBase() {
-        
-        try {
+		try {
             TestBase.prop = new Properties();
             final FileInputStream ip = new FileInputStream("D:\\ISP_PlugIn_Automation\\ISP_Plugin\\src\\main\\java\\Test_Data\\Test_data.properties");							
             TestBase.prop.load(ip);
@@ -69,7 +66,6 @@ public class TestBase implements ITestListener{
             e2.printStackTrace();
         }
     }
-	
 	
 	@BeforeMethod
 	public void TestReport(Method m,ITestContext context) {
@@ -114,10 +110,8 @@ public class TestBase implements ITestListener{
 		  attachment.setPath("ExtentSparkReport.html");
 		  attachment.setDisposition(EmailAttachment.ATTACHMENT);
 		  attachment.setDescription("Extent Report");
-		  //attachment.setName("Suite Test Report");
-		  
+		  		  
 		  // Create the email message MultiPartEmail email = new MultiPartEmail();
-		  //Email email = new SimpleEmail(); 
 		  HtmlEmail email = new HtmlEmail();
 		  email.setHostName("smtp.gmail.com");
 		  email.setSmtpPort(465); email.setAuthenticator(new
@@ -132,7 +126,7 @@ public class TestBase implements ITestListener{
 		  		+ "		Hello All, <br> <br>\r\n"
 		  		+ "		\r\n"
 		  		+ "		Please find the detailed automation test result in the attachment. <br> <br>\r\n"
-		  		+ "		\r\n"
+		  		+ "		\r\n <br> ISP Type : "+prop.getProperty("ISP_Type")+""
 		  		+ "		Total Executed Test Cases : "+totalExecutedCount+" <br>\r\n"
 		  		+ "		Total Passed :  "+passedCount+"<br> \r\n"
 		  		+ "		Total Failed : "+failedCount+"<br> \r\n"
@@ -156,7 +150,6 @@ public class TestBase implements ITestListener{
 		  email.send();
 	}
 	
-	@Parameters("browserName2")
     public void LaunchBrowser()
     {
 		String browserName = prop.getProperty("Browser");
@@ -167,22 +160,13 @@ public class TestBase implements ITestListener{
 			options.addArguments("--remote-allow-origins=*");    
 			//Launching the browser
 			driver=new ChromeDriver(options);
-			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 		else if(browserName.equals("FireFox")){
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver(); 
-			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}else if(browserName.equals("Edge")){
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver(); 
-			//Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-			//extentReports.setSystemInfo("Browser Name", cap.getBrowserName().toUpperCase());
-			//extentReports.setSystemInfo("Browser Version", cap.getBrowserVersion());
 		}
 			
 		driver.manage().window().maximize(); 
@@ -213,4 +197,5 @@ public class TestBase implements ITestListener{
     		driver.navigate().to(prop.getProperty("Preview_3_0"));
     	}
     }
+    
 }

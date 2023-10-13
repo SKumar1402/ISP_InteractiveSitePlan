@@ -7,59 +7,47 @@ import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;
 
-public class Light_Gallery extends TestBase{
-	String ISP_Type = prop.getProperty("ISP_Type");
+import AbstractComponents.AbstractComponents;
 
-	@BeforeClass
-	public void setup() {
-		LaunchBrowser();
-		open_URL();
-		Initialization();
-	}
-	
-	 @Test(priority=1) 
-	 public void Select_PlanFrom_Listing() throws InterruptedException {
-		 Thread.sleep(5000);
-		 if(ISP_Type.contains("Overview")) {
-		 Overview.First_Plan_in_Listing();
-		 Assert.assertTrue(Overview.First_Listing_LightGallery_Image());
-		 System.out.println("Passed : Plan detail card gets displayed.");
-		 }else {
-		    Assert.assertFalse(Overview.Right_Panel_hide());
-	    	System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
-		 }			
-	}
-	 
-	 @Test(priority=2) 
-	 public void Open_Light_Gallery () throws InterruptedException {
-		 if(ISP_Type.contains("Overview")) {
-		 Overview.First_Listing_LightGallery_Image_Click();
-		 Thread.sleep(2000);
-		 Assert.assertTrue(Overview.Light_Gallery_Image());
-		 System.out.println("Passed : Light Gallery image and thumbnail image has been verified.");
-		 }else {
-			Assert.assertFalse(Overview.Right_Panel_hide());
-		    System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
-		 }
-	}
-	 
-	@Test(priority=3)
-	public void Close_LightGallery() throws InterruptedException {
-		if(ISP_Type.contains("Overview")) {
-		Overview.Light_Gallery_CloseIcon();
-		Thread.sleep(2000);
-		Assert.assertFalse(Overview.Light_Gallery_Image());
-		System.out.println("Passed : Light Gallery has been closed.");
-		}else {
-			Assert.assertFalse(Overview.Right_Panel_hide());
-	    	System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
+public class Light_Gallery extends TestBase {
+	String ISP_Type = prop.getProperty("ISP_Type");
+	String url=prop.getProperty("url");
+
+	@Test(priority = 1)
+	public void Select_PlanFrom_Listing() throws InterruptedException {
+		AbstractComponents abc = new AbstractComponents(driver);
+		String planName=prop.getProperty("planname");
+		abc.Overview = abc.navigateToURL(url);
+		if (ISP_Type.contains("Overview")) {
+			abc.Overview.selectPlanFromListing(planName);
+			Assert.assertTrue(abc.Overview.First_Listing_LightGallery_Image());
+			System.out.println("Passed : Plan detail card gets displayed.");
+		} else {
+			Assert.assertFalse(abc.Overview.Right_Panel_hide());
+			System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
+		}
+		
+		//Open Light Gallery
+		if (ISP_Type.contains("Overview")) {
+			abc.Overview.First_Listing_LightGallery_Image_Click();
+			Thread.sleep(2000);
+			Assert.assertTrue(abc.Overview.Light_Gallery_Image());
+			System.out.println("Passed : Light Gallery image and thumbnail image has been verified.");
+		} else {
+			Assert.assertFalse(abc.Overview.Right_Panel_hide());
+			System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
+		}
+		
+		//Close Light Gallery
+		if (ISP_Type.contains("Overview")) {
+			abc.Overview.Light_Gallery_CloseIcon();
+			Thread.sleep(2000);
+			Assert.assertFalse(abc.Overview.Light_Gallery_Image());
+			System.out.println("Passed : Light Gallery has been closed.");
+		} else {
+			Assert.assertFalse(abc.Overview.Right_Panel_hide());
+			System.out.println("Skipped : Plan Listing (Right Panel) is not showing.");
 
 		}
 	}
-	 
-	 @AfterClass
-	 public void CloseBrowser() {
-		driver.close();
-	 }
-	 
 }

@@ -1,5 +1,8 @@
 package com.exsq;
 
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -7,30 +10,21 @@ import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;
 
+import AbstractComponents.AbstractComponents;
+
 public class Community_Name_Visibility extends TestBase {
-	@BeforeClass
-	public void setup() {
-
-		LaunchBrowser();
-		open_URL();
-		Initialization();
-	}
-
+	String url = prop.getProperty("url");
+	
 	@Test(priority = 1)
-	public void Community_Name_Visibility_Header() {
-		Assert.assertTrue(Overview.Community_Name_Header());
-		System.out.println("Passed : Community Name has been verified in the Header.");
-	}
+	public void CommunityNameVisibilityInHeaderAndFooter() {
+		AbstractComponents abc = new AbstractComponents(driver);
+		abc.Overview = abc.navigateToURL(url);
+		Assert.assertTrue(abc.Overview.Community_Name_Header());
+		System.out.println("Passed : Community Name visibility has been verified in the Header.");
 	
-	@Test(priority = 2)
-	public void Community_Name_Visiblity_Footer() {
-		Assert.assertTrue(Overview.Community_Name_Footer());
-		System.out.println("Passed : Community Name has been verified in the Footer.");
+		//Community name visibility Footer
+		Assert.assertTrue(abc.Overview.Community_Name_Footer());
+		System.out.println("Passed : Community Name visibility has been verified in the Footer.");
 	}
-	
-	 @AfterClass
-	 public void CloseBrowser() {
-		 driver.close();
-	 }
-	 
+
 }

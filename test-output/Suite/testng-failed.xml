@@ -1,153 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.exsq.isp_plugin.base.Listeners"/>
+  </listeners>
   <test thread-count="5" name="Print Functionality(failed)">
     <classes>
-      <class name="com.exsq.SVG_Zoom">
-        <methods>
-          <include name="setup"/>
-          <include name="SVG_Zoom_Slider"/>
-          <include name="CloseBrowser"/>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="TestReport"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.SVG_Zoom -->
-      <class name="com.exsq.Lot_Detail_Popup">
-        <methods>
-          <include name="Match_Lot_Data"/>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="HoldALot_Btn_Invisiblity"/>
-          <include name="setup"/>
-          <include name="CloseBrowser"/>
-          <include name="Hold_A_Lot_Btn_Visiblity"/>
-          <include name="TestReport"/>
-          <include name="Select_Lot_Popup_Visiblity"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Lot_Detail_Popup -->
       <class name="com.exsq.Print">
         <methods>
-          <include name="Close_Print_ModalWindow"/>
           <include name="CloseBrowser"/>
           <include name="Print_Btn_Visiblity"/>
           <include name="checkStatus"/>
           <include name="generateExtentReports"/>
-          <include name="Print_ModalWindow_Visibility"/>
           <include name="setup"/>
           <include name="TestReport"/>
           <include name="initialiseExtentReports"/>
         </methods>
       </class> <!-- com.exsq.Print -->
-      <class name="com.exsq.Light_Gallery">
-        <methods>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="CloseBrowser"/>
-          <include name="Open_Light_Gallery"/>
-          <include name="setup"/>
-          <include name="Close_LightGallery"/>
-          <include name="TestReport"/>
-          <include name="Select_PlanFrom_Listing"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Light_Gallery -->
-      <class name="com.exsq.ExpendedView_inListing">
-        <methods>
-          <include name="ExpendView_Visiblity_inListing"/>
-          <include name="setup"/>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="RequestInfo_Visiblity_inListing"/>
-          <include name="CloseBrowser"/>
-          <include name="TestReport"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.ExpendedView_inListing -->
-      <class name="com.exsq.Master_Plan">
-        <methods>
-          <include name="Verify_MasterMap_Name_Footer"/>
-          <include name="Verify_MasterMap_Name_Header"/>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="Verify_Plan_Listing"/>
-          <include name="setup"/>
-          <include name="TestReport"/>
-          <include name="CloseBrowser"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Master_Plan -->
-      <class name="com.exsq.Community_Name_Visibility">
-        <methods>
-          <include name="Community_Name_Visibility_Header"/>
-          <include name="checkStatus"/>
-          <include name="CloseBrowser"/>
-          <include name="generateExtentReports"/>
-          <include name="Community_Name_Visiblity_Footer"/>
-          <include name="TestReport"/>
-          <include name="setup"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Community_Name_Visibility -->
-      <class name="com.exsq.Change_Community">
-        <methods>
-          <include name="Verify_ChangeCommunityList"/>
-          <include name="checkStatus"/>
-          <include name="Verify_SelectCommunityFromList"/>
-          <include name="generateExtentReports"/>
-          <include name="CloseBrowser"/>
-          <include name="Verify_ActiveCommunity_List"/>
-          <include name="TestReport"/>
-          <include name="initialiseExtentReports"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- com.exsq.Change_Community -->
-      <class name="com.exsq.Plan_Details_Filter">
-        <methods>
-          <include name="setup"/>
-          <include name="Select_PlanDetailsFilter_MinimumBtn_Slider"/>
-          <include name="checkStatus"/>
-          <include name="CloseBrowser"/>
-          <include name="generateExtentReports"/>
-          <include name="PlanDetails_Filter_Button"/>
-          <include name="TestReport"/>
-          <include name="Verify_PlanDetails_BedroomOption_Selection"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Plan_Details_Filter -->
-      <class name="com.exsq.Request_Info">
-        <methods>
-          <include name="Loader_Visiblity"/>
-          <include name="CloseBrowser"/>
-          <include name="Fill_Request_Info_Form"/>
-          <include name="TestReport"/>
-          <include name="Success_Popup_Visibility"/>
-          <include name="initialiseExtentReports"/>
-          <include name="Open_RequestInfo_Form"/>
-          <include name="Request_Info_Btn_Visiblity"/>
-          <include name="checkStatus"/>
-          <include name="RequestInfo_Visiblity_ExpendView_inListing"/>
-          <include name="generateExtentReports"/>
-          <include name="setup"/>
-          <include name="Submit_Request_Info"/>
-          <include name="Success_PopUp_Close"/>
-        </methods>
-      </class> <!-- com.exsq.Request_Info -->
-      <class name="com.exsq.Home_Status_Filter">
-        <methods>
-          <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="CloseBrowser"/>
-          <include name="Close_Homesite_Status_List"/>
-          <include name="Homesite_Status_Btn_click"/>
-          <include name="TestReport"/>
-          <include name="setup"/>
-          <include name="Homesite_Status_Filter_Visibility"/>
-          <include name="initialiseExtentReports"/>
-        </methods>
-      </class> <!-- com.exsq.Home_Status_Filter -->
     </classes>
   </test> <!-- Print Functionality(failed) -->
 </suite> <!-- Failed suite [Suite] -->

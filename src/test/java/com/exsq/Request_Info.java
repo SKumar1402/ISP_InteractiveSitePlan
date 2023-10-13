@@ -7,77 +7,59 @@ import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;
 
+import AbstractComponents.AbstractComponents;
+
 public class Request_Info extends TestBase {
-	String ISP_Type = prop.getProperty("ISP_Type");
-
-	@BeforeClass
-	public void setup() {
-
-		LaunchBrowser();
-		open_URL();
-		Initialization();
-	}
+	String url = prop.getProperty("url");
 
 	@Test(priority=0)
-	public void Request_Info_Btn_Visiblity() {
-		Assert.assertTrue(Overview.request_info_btn());
+	public void Request_Info_Btn_Visiblity() throws InterruptedException {
+		String planName= prop.getProperty("planname");
+		AbstractComponents abc = new AbstractComponents(driver);
+		abc.Overview = abc.navigateToURL(url);
+		Assert.assertTrue(abc.Overview.request_info_btn());
 		System.out.println("Passed : Request Info button is showing in the footer.");
-	}
-	
-	@Test(priority=1)
-	public void Open_RequestInfo_Form() {
-		Overview.request_info_btn_click();
-		Assert.assertTrue(Overview.Request_Info_Visible());
+		//Open Request Info Form
+		abc.Overview.request_info_btn_click();
+		Assert.assertTrue(abc.Overview.Request_Info_Visible());
 		System.out.println("Passed : Requet Info button is clickable and Request Info form is visible.");
-	}
 	
-	
-	@Test(priority=2)
-	public void Fill_Request_Info_Form() {
-		Overview.Fill_Request_Info_Form();
+		//Fill_Request_Info_Form(String firstName, String lastName, String eMail, String phone, String zipCode, String Comments_Overview_Two) {
+		String firstName=prop.getProperty("First_Name");
+		String lastName=prop.getProperty("Browser");
+		String eMail=prop.getProperty("email");
+		String phone=prop.getProperty("Phone");;
+		String zipCode=prop.getProperty("ZipCode");
+		String Comments_Overview_Two=prop.getProperty("Comments_Overview_Two");
+		System.out.println("First Name is : "+firstName);
+		abc.Overview.Fill_Request_Info_Form(firstName, lastName, eMail, phone, zipCode, Comments_Overview_Two);
 		System.out.println("Passed : Request Info has been filled.");
-	}
-	
-	@Test(priority=3)
-	public void Submit_Request_Info() {
-		Overview.Send_Request_Click();
+		//Submit_Request_Info() {
+		abc.Overview.Send_Request_Click();
 		System.out.println("Passed : 'Send Request' button has been clicked.");
-	}
-	
-	@Test(priority=4)
-	public void Loader_Visiblity() {
-		Assert.assertTrue(Overview.Loading_Loader());
+		//Loader Visibility
+		Assert.assertTrue(abc.Overview.Loading_Loader());
 		System.out.println("Passed : After Submit the 'Request Info' form, Loader is showing.");
-	}
-	
-	@Test(priority=5)
-	public void Success_Popup_Visibility() {
-		Assert.assertTrue(Overview.ri_Success_Popup_hide());
+		
+		//Success Pop up Visibility
+		Assert.assertTrue(abc.Overview.ri_Success_Popup_hide());
 		System.out.println("Passed : Request Info success pop up has been verified..");
-	}
-	
-	@Test(priority = 6)
-	public void Success_PopUp_Close() throws Throwable {
-		Overview.Great_Lets_Continue_btn_click();
+		
+		//Success Pop Up Close
+		abc.Overview.Great_Lets_Continue_btn_click();
+		System.out.println("******453464***************");
 		Thread.sleep(2000);
-		Assert.assertFalse(Overview.ri_Success_Popup_hide());
+		Assert.assertFalse(abc.Overview.ri_Success_Popup_hide());
 		System.out.println("Passed : Request Info success pop up has been closed.");
-	}
-	
-	@Test(priority = 7)
-	public void RequestInfo_Visiblity_ExpendView_inListing() {
+		
+		//Request Info Visibility Expend View in Listing
+		String ISP_Type = prop.getProperty("ISP_Type");
 		if (ISP_Type.equals("Overview_2") || ISP_Type.equals("Overview_3")) {
-			Overview.First_Plan_in_Listing();
-			Assert.assertTrue(Overview.Request_Info_FirstListing());
+			abc.Overview.selectPlanFromListing(planName);
+			Assert.assertTrue(abc.Overview.Request_Info_FirstListing());
 			System.out.println("Passed : Request Info button is showing in the expended view in listing.");
 		} else {
 			System.out.println("Plan Listing (Right Panel) is not showing.");
 		}
-	}
-	
-	 @AfterClass
-	 public void CloseBrowser() {
-		 driver.close();
-	 }
-	 
+	}	 
 }

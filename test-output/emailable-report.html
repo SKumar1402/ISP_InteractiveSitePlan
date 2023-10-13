@@ -8,11 +8,39 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">59,221</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Print Functionality</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">261,195</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.exsq.Android1</td><td><a href="#m0">TestChrome</a></td><td rowspan="1">1689587514228</td><td rowspan="1">26723</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Print Functionality &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.exsq.Community_Name_Visibility</td><td><a href="#m0">generateExtentReports</a></td><td rowspan="1">1697180929448</td><td rowspan="1">3137</td></tr><tr><th colspan="4">Print Functionality &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.exsq.Change_Community</td><td><a href="#m1">Verify_ChangeCommunityList</a></td><td rowspan="1">1697180802728</td><td rowspan="1">6827</td></tr><tr class="passedodd"><td rowspan="1">com.exsq.Community_Name_Visibility</td><td><a href="#m2">CommunityNameVisibilityInHeaderAndFooter</a></td><td rowspan="1">1697180669898</td><td rowspan="1">7334</td></tr><tr class="passedeven"><td rowspan="1">com.exsq.ExpendedView_inListing</td><td><a href="#m3">RequestInfoVisiblityListing</a></td><td rowspan="1">1697180733790</td><td rowspan="1">9904</td></tr><tr class="passedodd"><td rowspan="1">com.exsq.Home_Status_Filter</td><td><a href="#m4">Homesite_Status_Filter_Visibility</a></td><td rowspan="1">1697180809557</td><td rowspan="1">43601</td></tr><tr class="passedeven"><td rowspan="1">com.exsq.Light_Gallery</td><td><a href="#m5">Select_PlanFrom_Listing</a></td><td rowspan="1">1697180703795</td><td rowspan="1">29990</td></tr><tr class="passedodd"><td rowspan="1">com.exsq.Lot_Detail_Popup</td><td><a href="#m6">Select_Lot_Popup_Visiblity</a></td><td rowspan="1">1697180747691</td><td rowspan="1">46145</td></tr><tr class="passedeven"><td rowspan="1">com.exsq.Master_Plan</td><td><a href="#m7">Verify_MasterMap_Name_Header</a></td><td rowspan="1">1697180853162</td><td rowspan="1">32606</td></tr><tr class="passedodd"><td rowspan="1">com.exsq.Plan_Details_Filter</td><td><a href="#m8">PlanDetails_Filter_Button</a></td><td rowspan="1">1697180743697</td><td rowspan="1">3992</td></tr><tr class="passedeven"><td rowspan="1">com.exsq.Print</td><td><a href="#m9">Print_Btn_Visiblity</a></td><td rowspan="1">1697180677249</td><td rowspan="1">26539</td></tr><tr class="passedodd"><td rowspan="1">com.exsq.Request_Info</td><td><a href="#m10">Request_Info_Btn_Visiblity</a></td><td rowspan="1">1697180885771</td><td rowspan="1">43378</td></tr><tr class="passedeven"><td rowspan="1">com.exsq.SVG_Zoom</td><td><a href="#m11">SVG_Zoom_Slider</a></td><td rowspan="1">1697180793842</td><td rowspan="1">8881</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.exsq.Android1#TestChrome</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Print Functionality</h2><h3 id="m0">com.exsq.Community_Name_Visibility#generateExtentReports</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>org.testng.TestRunner@3f048c86</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.apache.commons.mail.EmailException: Sending the email to the following server failed : smtp.gmail.com:465
+	at org.apache.commons.mail.Email.sendMimeMessage(Email.java:1469)
+	at org.apache.commons.mail.Email.send(Email.java:1496)
+	at com.exsq.isp_plugin.base.TestBase.generateExtentReports(TestBase.java:151)
+Caused by: javax.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted. Learn more at
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 21-20020a17090a035500b002636dfcc6f5sm3215336pjf.3 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780)
+	at javax.mail.Service.connect(Service.java:388)
+	at javax.mail.Service.connect(Service.java:246)
+	at javax.mail.Service.connect(Service.java:195)
+	at javax.mail.Transport.send0(Transport.java:254)
+	at javax.mail.Transport.send(Transport.java:124)
+	at org.apache.commons.mail.Email.sendMimeMessage(Email.java:1459)
+	... 19 more
+... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.exsq.Change_Community#Verify_ChangeCommunityList</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.exsq.Community_Name_Visibility#CommunityNameVisibilityInHeaderAndFooter</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.exsq.ExpendedView_inListing#RequestInfoVisiblityListing</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.exsq.Home_Status_Filter#Homesite_Status_Filter_Visibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.exsq.Light_Gallery#Select_PlanFrom_Listing</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.exsq.Lot_Detail_Popup#Select_Lot_Popup_Visiblity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.exsq.Master_Plan#Verify_MasterMap_Name_Header</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.exsq.Plan_Details_Filter#PlanDetails_Filter_Button</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.exsq.Print#Print_Btn_Visiblity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.exsq.Request_Info#Request_Info_Btn_Visiblity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">com.exsq.SVG_Zoom#SVG_Zoom_Slider</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

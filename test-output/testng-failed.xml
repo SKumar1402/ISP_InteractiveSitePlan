@@ -3,19 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Light_Gallery">
+      <class name="com.exsq.Lot_Selection_and_Listing">
         <methods>
           <include name="checkStatus"/>
           <include name="generateExtentReports"/>
-          <include name="CloseBrowser"/>
-          <include name="Open_Light_Gallery"/>
-          <include name="setup"/>
-          <include name="Close_LightGallery"/>
+          <include name="closeDriver"/>
+          <include name="Verify_LotOutlined_AfterSelectPlanFromListing"/>
+          <include name="LaunchBrowser"/>
           <include name="TestReport"/>
-          <include name="Select_PlanFrom_Listing"/>
           <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.Light_Gallery -->
+      </class> <!-- com.exsq.Lot_Selection_and_Listing -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

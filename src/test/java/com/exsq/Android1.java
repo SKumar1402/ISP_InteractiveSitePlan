@@ -1,6 +1,5 @@
 package com.exsq;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.exsq.isp_plugin.base.TestBase;

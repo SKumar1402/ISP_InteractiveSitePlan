@@ -1,26 +1,15 @@
 package com.exsq;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Properties;
 
-import org.openqa.selenium.WebDriver;
+import java.net.URL;
+
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
-import com.exsq.isp_plugin.base.TestBase;
-import com.google.common.collect.ImmutableMap;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Android_Chrome {
 	

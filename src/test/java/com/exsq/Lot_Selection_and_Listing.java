@@ -9,7 +9,7 @@ import AbstractComponents.AbstractComponents;
 
 public class Lot_Selection_and_Listing extends TestBase {
 	String url = prop.getProperty("url");
-
+	
 	 @Test(priority=0) 
 	 public void Verify_LotOutlined_AfterSelectPlanFromListing() throws InterruptedException {
 		 String planName=prop.getProperty("planname");
@@ -53,6 +53,7 @@ public class Lot_Selection_and_Listing extends TestBase {
 		 Thread.sleep(2000);
 		 abc.Overview.Select_TwoPlansAssigned_Lot();
 		 Assert.assertFalse(abc.Overview.Hold_A_Lot_btn());
-		 System.out.println("Passed : Hold a Lot button invisiblity has been verified.");
+		 System.out.println("Passed : Hold a Lot button invisibility has been verified.");
 	}	 
+	 
 }

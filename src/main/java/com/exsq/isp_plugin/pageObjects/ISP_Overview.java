@@ -11,34 +11,26 @@ import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.exsq.isp_plugin.base.TestBase;
 
 import AbstractComponents.AbstractComponents;
 
 public class ISP_Overview extends AbstractComponents {
 	WebDriver driver;
-
+	Actions action;
+	
 	public ISP_Overview(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	Actions action;
-
 	// *****************Kenley community************
 	// Lot has lot Id
-
-	@FindBy(css = "g#Lots path#Lot_5")
-	public WebElement SinglePlanAssigned_2;
-
-	// Lot has lot address
-	@FindBy(css = "g#Lots path#Lot_10")
-	public WebElement TwoPlansAssignedLot_2;
+	
+	@FindBy (css="g#Lots path")
+	public List<WebElement> Lots;
 
 	// *****************King's Grant community************
 	// Lot has lot Id
@@ -437,6 +429,61 @@ public class ISP_Overview extends AbstractComponents {
 	// Change Community List
 	@FindBy(css = "ul#isp-community-dropdown.isp-tooltip-open")
 	private WebElement changeCommunityList;
+	
+	//Save link in inactive state
+	@FindBy (css="a#isp-save-btn.disabled")
+	private WebElement SavelotButtonInactive;
+	
+	//Save link in active state
+	@FindBy (css="a#isp-save-btn:not(.disabled)")
+	private WebElement SavelotButtonActive;
+	
+	//Logged in user
+	@FindBy (css="a#isp-profile-drpdwn span#firstName")
+	private WebElement LoggedInUsername;
+	
+	//View Saved Lots button from user menu
+	@FindBy (css="ul:not(.isp-hide) a#viewSavedLotsBtn")
+	private WebElement ViewsavedlotsButton;
+	
+	// Logout button from user menu
+	@FindBy (css="ul:not(.isp-hide) a#isp-account-logout")
+	private WebElement LogoutButton;
+	
+	@FindBy (css="button#isp-ok-btn")
+	private WebElement LotSavedsuccesspopup_Ok_btn;
+	
+	@FindBy (css="input#ispSaveLotText")  
+	private WebElement Savelotnametextfield;
+	
+	@FindBy (css="button#isp-save-lot-btn")
+	private WebElement LotSavebutton;
+	
+	@FindBy (css="section#isp-saved-homesite:not(.isp-hide) div.isp-saved-home-inner")
+	private WebElement Savedlotsection;
+	
+	@FindBy (css="a#isp-ri-cross")
+	private WebElement Savedlotsection_closeicon;
+	
+	@FindBy (css="section.isp-lot-card a.isp-delete-saved")
+	private WebElement Savedlotdeleteicon;
+	
+	@FindBy (css="div#isp-delete-lot-modal div.isp-save-lot-inner")
+	private WebElement Deletethislotpopup ;
+	
+	@FindBy (css="div#isp-delete-lot-modal button#isp-delete-cancel")
+	private WebElement Deletethislotpopup_cancelbtn ;
+	
+	@FindBy (css="div#isp-delete-lot-modal button#isp-delete-ok")
+	private WebElement Deletelotbtn ;
+	
+	//Create Account link 
+	@FindBy (css="div#isp-login-btn-div a#isp-create-account")
+	private WebElement SignupLink;
+	
+	//Login button from header 
+	@FindBy (css="div#isp-login-btn-div a#isp-account-login")
+	private WebElement LoginLink;
 
 	public boolean masterMap_btn() {
 		boolean elementStatus = masterMap_btn.isDisplayed();
@@ -466,6 +513,7 @@ public class ISP_Overview extends AbstractComponents {
 
 	public void request_info_btn_click() {
 		request_info_btn_Footer.click();
+		waitForWebElementToAppear(Request_Info_Visible);
 	}
 
 	public void Request_info_First_Name_send(String firstName) {
@@ -616,16 +664,6 @@ public class ISP_Overview extends AbstractComponents {
 
 	public void HoldALot_ContinueToPayment() {
 		Continue_Payment_btn.click();
-	}
-
-	public void Select_SinglePlanAssigned_Lot() {
-		//action.moveToElement(SinglePlanAssigned_2).click().build().perform();
-		SinglePlanAssigned_2.click();
-	}
-
-	public void Select_TwoPlansAssigned_Lot() {
-		//action.moveToElement(TwoPlansAssignedLot_2).click().build().perform();
-		TwoPlansAssignedLot_2.click();
 	}
 
 	public void HoldALot_btn_click() {
@@ -805,8 +843,7 @@ public class ISP_Overview extends AbstractComponents {
 	}
 
 	public boolean First_Listing_LightGallery_Image() {
-		boolean element = First_Listing_LightGallery_Image.isDisplayed();
-		return element;
+		return First_Listing_LightGallery_Image.isDisplayed();
 	}
 
 	public void First_Listing_LightGallery_Image_Click() {
@@ -874,10 +911,6 @@ public class ISP_Overview extends AbstractComponents {
 		ISPLotDetails.put("Swing", swing);
 		ISPLotDetails.put("Elevation", elevation);
 		return ISPLotDetails;
-	}
-
-	public String SinglePlanAssigned_2_GetCSS() {
-		return SinglePlanAssigned_2.getAttribute("style");
 	}
 
 	public boolean Hold_A_Lot_btn() {
@@ -953,7 +986,74 @@ public class ISP_Overview extends AbstractComponents {
 		return status;
 	}
 	
-	public void waitToHideSkeleton() {
+	public void clickOnLightGallery(String planName) throws InterruptedException {
+		WebElement lightGallery=CheckPlanNameAvailability(planName);
+		Thread.sleep(5000);
+		lightGallery.findElement(By.cssSelector("section>figure")).click();
+	}
+	
+	public UUPLoginSignUp waitToHideSkeleton() {
 		waitForElementToDisappear(ISP_Skeleton);
+		return new UUPLoginSignUp(driver);
+	}
+	
+	public void clickOnLotId(String LotId) throws InterruptedException {
+	WebElement lotid=	Lots.stream().filter(lot->lot.getAttribute("data-name").equals(LotId)).findFirst().orElse(null);
+	Thread.sleep(2000);
+	lotid.click();
+	}
+
+
+	public boolean saveDisabled() {
+		return SavelotButtonInactive.isDisplayed();
+	}
+	
+	public boolean saveEnabled() {
+		return SavelotButtonActive.isDisplayed();
+	}
+
+	public String userName() {
+		waitForWebElementToAppear(LoggedInUsername);
+		return LoggedInUsername.getText();
+	}
+	
+	public boolean saveButtonInactive() {
+		return SavelotButtonInactive.isDisplayed();
+	}
+	
+	public boolean LoginButtonVisibility() {
+		waitForWebElementToAppear(LoginLink);
+		return LoginLink.isDisplayed();
+	}
+	
+	public UUPLoginSignUp clickOnLoginLink() {
+		waitForWebElementToAppear(LoginLink);
+		LoginLink.click();
+		return new UUPLoginSignUp(driver);
+	}
+	
+	public void clickOnUserMenu() {
+		LoggedInUsername.click();
+	}
+	
+	public boolean ViewsavedlotsButton() {
+		return ViewsavedlotsButton.isDisplayed();
+	}
+	
+	public boolean logoutButton() {
+		return LogoutButton.isDisplayed();
+	}	
+	
+	public boolean Savedlotsection() {
+		try {
+			Savedlotsection.isDisplayed();
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public void Savedlotsection_closeicon() {
+		Savedlotsection_closeicon.click();
 	}
 }

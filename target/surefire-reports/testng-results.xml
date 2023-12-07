@@ -2,107 +2,100 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-07T20:20:28 IST" name="Suite" finished-at="2023-06-07T20:20:41 IST" duration-ms="12810">
+  <suite started-at="2023-11-07T12:08:22 IST" name="Suite" finished-at="2023-11-07T12:08:46 IST" duration-ms="23971">
     <groups>
     </groups>
-    <test started-at="2023-06-07T20:20:28 IST" name="Print Functionality" finished-at="2023-06-07T20:20:41 IST" duration-ms="12810">
-      <class name="com.exsq.Community_Name_Visibility">
-        <test-method is-config="true" signature="initialiseExtentReports()[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:28 IST" name="initialiseExtentReports" finished-at="2023-06-07T20:20:28 IST" duration-ms="217" status="PASS">
+    <test started-at="2023-11-07T12:08:22 IST" name="SanityTest" finished-at="2023-11-07T12:08:46 IST" duration-ms="23971">
+      <class name="com.exsq.communityName">
+        <test-method is-config="true" signature="initialiseExtentReports()[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:22 IST" name="initialiseExtentReports" finished-at="2023-11-07T12:08:22 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialiseExtentReports -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:28 IST" name="setup" finished-at="2023-06-07T20:20:39 IST" duration-ms="10145" status="PASS">
+        <test-method is-config="true" signature="LaunchBrowser()[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:22 IST" name="LaunchBrowser" finished-at="2023-11-07T12:08:27 IST" duration-ms="4518" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:39 IST" name="TestReport" finished-at="2023-06-07T20:20:39 IST" duration-ms="13" status="PASS">
+        </test-method> <!-- LaunchBrowser -->
+        <test-method is-config="true" signature="createObject()[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:27 IST" name="createObject" finished-at="2023-11-07T12:08:36 IST" depends-on-methods="com.exsq.isp_plugin.base.TestBase.LaunchBrowser" duration-ms="9941" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createObject -->
+        <test-method signature="CommunityNameVisibilityInHeaderAndFooter()[pri:1, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:36 IST" name="CommunityNameVisibilityInHeaderAndFooter" finished-at="2023-11-07T12:08:46 IST" duration-ms="9164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CommunityNameVisibilityInHeaderAndFooter -->
+        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:36 IST" name="TestReport" finished-at="2023-11-07T12:08:36 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.exsq.Community_Name_Visibility.Community_Name_Visibility_Header()]]>
+                <![CDATA[public void com.exsq.communityName.CommunityNameVisibilityInHeaderAndFooter()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@32f1fafe]]>
+                <![CDATA[org.testng.TestRunner@41330d4f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestReport -->
-        <test-method signature="Community_Name_Visibility_Header()[pri:1, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:39 IST" name="Community_Name_Visibility_Header" finished-at="2023-06-07T20:20:41 IST" duration-ms="2367" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Community_Name_Visibility_Header -->
-        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="checkStatus" finished-at="2023-06-07T20:20:41 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:46 IST" name="checkStatus" finished-at="2023-11-07T12:08:46 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.exsq.Community_Name_Visibility.Community_Name_Visibility_Header()]]>
+                <![CDATA[public void com.exsq.communityName.CommunityNameVisibilityInHeaderAndFooter()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Community_Name_Visibility_Header status=SUCCESS method=Community_Name_Visibility.Community_Name_Visibility_Header()[pri:1, instance:com.exsq.Community_Name_Visibility@6ca8564a] output={null}]]]>
+                <![CDATA[[TestResult name=CommunityNameVisibilityInHeaderAndFooter status=SUCCESS method=communityName.CommunityNameVisibilityInHeaderAndFooter()[pri:1, instance:com.exsq.communityName@302c971f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method signature="Community_Name_Visiblity_Footer()[pri:2, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="Community_Name_Visiblity_Footer" finished-at="2023-06-07T20:20:41 IST" duration-ms="65" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Community_Name_Visiblity_Footer -->
-        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="TestReport" finished-at="2023-06-07T20:20:41 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="TestReport(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:46 IST" name="TestReport" finished-at="2023-11-07T12:08:46 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.exsq.Community_Name_Visibility.Community_Name_Visiblity_Footer()]]>
+                <![CDATA[public void com.exsq.communityName.VerifyCommunityNameVisibilityFooter()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@32f1fafe]]>
+                <![CDATA[org.testng.TestRunner@41330d4f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestReport -->
-        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="checkStatus" finished-at="2023-06-07T20:20:41 IST" duration-ms="0" status="PASS">
+        <test-method signature="VerifyCommunityNameVisibilityFooter()[pri:2, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:46 IST" name="VerifyCommunityNameVisibilityFooter" finished-at="2023-11-07T12:08:46 IST" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCommunityNameVisibilityFooter -->
+        <test-method is-config="true" signature="checkStatus(java.lang.reflect.Method,org.testng.ITestResult)[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:46 IST" name="checkStatus" finished-at="2023-11-07T12:08:46 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.exsq.Community_Name_Visibility.Community_Name_Visiblity_Footer()]]>
+                <![CDATA[public void com.exsq.communityName.VerifyCommunityNameVisibilityFooter()]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[TestResult name=Community_Name_Visiblity_Footer status=SUCCESS method=Community_Name_Visibility.Community_Name_Visiblity_Footer()[pri:2, instance:com.exsq.Community_Name_Visibility@6ca8564a] output={null}]]]>
+                <![CDATA[[TestResult name=VerifyCommunityNameVisibilityFooter status=SUCCESS method=communityName.VerifyCommunityNameVisibilityFooter()[pri:2, instance:com.exsq.communityName@302c971f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkStatus -->
-        <test-method is-config="true" signature="CloseBrowser()[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="CloseBrowser" finished-at="2023-06-07T20:20:41 IST" duration-ms="141" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.exsq.communityName@302c971f]" started-at="2023-11-07T12:08:46 IST" name="tearDown" finished-at="2023-11-07T12:08:46 IST" duration-ms="281" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CloseBrowser -->
-        <test-method is-config="true" signature="generateExtentReports(org.testng.ITestContext)[pri:0, instance:com.exsq.Community_Name_Visibility@6ca8564a]" started-at="2023-06-07T20:20:41 IST" name="generateExtentReports" finished-at="2023-06-07T20:20:46 IST" duration-ms="4501" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@32f1fafe]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateExtentReports -->
-      </class> <!-- com.exsq.Community_Name_Visibility -->
-    </test> <!-- Print Functionality -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.exsq.communityName -->
+    </test> <!-- SanityTest -->
   </suite> <!-- Suite -->
 </testng-results>

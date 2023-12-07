@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.exsq.Request_Info">
+      <class name="com.exsq.ispwithuuplogin.savedLots">
         <methods>
           <include name="createObject"/>
           <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
           <include name="LaunchBrowser"/>
-          <include name="TestReport"/>
           <include name="tearDown"/>
-          <include name="SuccessPopUpClose"/>
+          <include name="TestReport"/>
+          <include name="saveLot"/>
           <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.Request_Info -->
+      </class> <!-- com.exsq.ispwithuuplogin.savedLots -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

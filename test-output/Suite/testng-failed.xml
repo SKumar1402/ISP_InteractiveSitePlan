@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite thread-count="1" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <listeners>
     <listener class-name="com.exsq.isp_plugin.base.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Print Functionality(failed)">
+  <test thread-count="1" parallel="tests" name="Master Plan(failed)">
     <classes>
-      <class name="com.exsq.Print">
+      <class name="com.exsq.masterPlan">
         <methods>
-          <include name="CloseBrowser"/>
-          <include name="Print_Btn_Visiblity"/>
+          <include name="Verify_MasterMap_Name_Header"/>
           <include name="checkStatus"/>
-          <include name="generateExtentReports"/>
-          <include name="setup"/>
+          <include name="LaunchBrowser"/>
+          <include name="VerifyMasterMapNameFooter"/>
+          <include name="createObject"/>
+          <include name="tearDown"/>
           <include name="TestReport"/>
           <include name="initialiseExtentReports"/>
         </methods>
-      </class> <!-- com.exsq.Print -->
+      </class> <!-- com.exsq.masterPlan -->
     </classes>
-  </test> <!-- Print Functionality(failed) -->
+  </test> <!-- Master Plan(failed) -->
 </suite> <!-- Failed suite [Suite] -->

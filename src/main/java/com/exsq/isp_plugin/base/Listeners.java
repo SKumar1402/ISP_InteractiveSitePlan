@@ -16,6 +16,8 @@ public class Listeners extends TestBase implements ITestListener{
 	ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ThreadLocal<ExtentTest> extentTest=new ThreadLocal<ExtentTest>();
+	public int passedTestCount=0;
+	public int failedTestCount=0;
 
 	@Override
 	public void onTestStart(ITestResult result) {
@@ -26,6 +28,7 @@ public class Listeners extends TestBase implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		test.log(Status.PASS, "Test passed extentreport");
+		passedTestCount++;
 	}
 
 	@Override
@@ -41,7 +44,7 @@ public class Listeners extends TestBase implements ITestListener{
 			e.printStackTrace();
 		}
 		extentTest.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
-
+		failedTestCount++;
 	}
 
 	@Override
@@ -61,6 +64,7 @@ public class Listeners extends TestBase implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
+
 		extent.flush();
 	}
 }

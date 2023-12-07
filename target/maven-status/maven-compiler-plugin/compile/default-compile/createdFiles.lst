@@ -1,4 +1,9 @@
 com\exsq\isp_plugin\base\TestBase.class
-com\exsq\isp_plugin\pageObjects\Admin_Homepage_page.class
+com\exsq\isp_plugin\base\TestBase_Mobile.class
 com\exsq\isp_plugin\pageObjects\ISP_Overview.class
-com\exsq\isp_plugin\pageObjects\ISP_Preview.class
+com\exsq\isp_plugin\pageObjects\ISP_Overview_Mobile_page.class
+com\exsq\isp_plugin\pageObjects\Admin_Homepage_page.class
+AbstractComponents\AbstractComponents.class
+com\exsq\isp_plugin\pageObjects\UUPLoginSignUp.class
+AbstractComponents\ExtentReporterNG.class
+com\exsq\isp_plugin\base\Listeners.class

@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
@@ -20,18 +22,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -40,17 +39,17 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.exsq.isp_plugin.pageObjects.ISP_Overview;
-import com.exsq.isp_plugin.pageObjects.UUPLoginSignUp;
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
 public class TestBase {
 
+	public enum PageType {
+		ISPOverview, UUPPage
+	}
+	
 	public static Properties prop;
 	public static WebDriver driver;
 	public ISP_Overview Overview;
@@ -103,7 +102,7 @@ public class TestBase {
 		}
 	}
 
-	@AfterSuite
+	
 	public void generateExtentReports(ITestContext context) throws IOException, Exception {
 		extentReports.flush();
 		passedCount = context.getPassedTests().size();
@@ -153,12 +152,16 @@ public class TestBase {
 	
 	@BeforeTest
 	public WebDriver LaunchBrowser() {
-		String browserName = prop.getProperty("Browser");
+		String browserName = System.getProperty("Browser")!=null? System.getProperty("Browser"):prop.getProperty("Browser");
+				//prop.getProperty("Browser");
 
-		if (browserName.equals("Chrome")) {
+		if (browserName.contains("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
+			if(browserName.contains("headless")) {
+			options.addArguments("headless");
+			}
 			// Launching the browser
 			driver = new ChromeDriver(options);
 		} else if (browserName.equals("FireFox")) {
@@ -166,12 +169,14 @@ public class TestBase {
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("Edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
+			EdgeOptions edgeOptions = new EdgeOptions(); 
+			driver = new EdgeDriver(edgeOptions);
 		}
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		return driver;
 	}
+	
 	
 
 	public void init() {
@@ -200,7 +205,6 @@ public class TestBase {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 	
 	public String getScreenshot(String testCaseName) throws IOException{
@@ -211,7 +215,7 @@ public class TestBase {
 		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 	}
 	
-	@AfterClass
+	@AfterTest
 	public void tearDown() {
 		driver.close();
 	}
